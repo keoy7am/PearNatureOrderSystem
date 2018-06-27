@@ -117,14 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAARpJREFUOE/dUjtOA0EMnQoouQASxSpC8WTH69lFAgoWKtJCmZThBqHIBdJCD1IQ
+        SFByBq5AR8dR8Jt4+WUkaniSpefnn8Ye9w9BRGs+yJhCvPFcP8MSh6YxS8uDOE7UXonry0HVHHrfbMHA
+        oS1jcWLpnyiKYl0Dt57jEzNvQtOCA2iwQVXtQUMMOdBQAy2hz/W9BubmOs/NPlXxpRQ58aE5Be+aAMil
+        IHfmyIV2XCTHkCaHeLQTdnvK36isz3I52miq0+MMjukJXQNwNNHpw1wD1C6dII+5J1Apx8lyT+D4YK5z
+        2227YXv4ucQFbGWJ+v5vS+xALOdagFNd6f3b7ozg0Cy2esavwGfps4w08frjIylP2m8f6S/CuXePXWI8
+        GnyYHgAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tb_Password.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAONJREFUOE+10j2KwlAUhuHggLZTWFiKnaCFMLgBCxegqGipjYWt1SxDCwtLsRLE
+        QrByB2LjMgTBn8KZQd8vREhufkjhfPBAzj0n93JDrP9KDmPsHCNkEStVXPDA1fV8RgWRyeAEvdjGBxLo
+        4IYj0gjNN3Ra3668GUC9oV2FZAUNfdqVNzpZvYVdhWQNDTVQN+hK6i0RmCJ+oKEod+ThSxPm8AxzY01q
+        8KUF99AGr2zh7ulKvpgb7JFECgdn7SXWBqJr6R8w12NvMMHUWJPAb1DCH8xh0y8KCEwZXfRCqPeFd8Wy
+        ngU9YGV2WYDhAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="eyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tb_Account.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAKtJREFUOE+1z0EKgUEYh/GxwVKWykJ2ykY25AgW4gbKzs415BBcRKysbFiQI1jg
+        AjxTMzVN75h3wVO/vq+v/s185l8VMMEaG4zdN3UrvCNLqGojHnstZJtBGltTZBtBGltDZCvjhnh8RQmq
+        mtjBj7doQF0VHfe0uqhAVR0X2JMfeLr3M2r4mv3/E/zVY0cUkWwBaRiaI9kB0ii0R7IXpFHojmR9DDJ6
+        +FXGfACeSFDPKvp7EAAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>
