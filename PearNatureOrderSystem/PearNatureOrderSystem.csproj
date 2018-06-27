@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appdata.cs" />
     <Compile Include="ApplicationRegister.cs" />
     <Compile Include="Library\CommonBase.cs" />
     <Compile Include="Models\CategroyModel.cs" />

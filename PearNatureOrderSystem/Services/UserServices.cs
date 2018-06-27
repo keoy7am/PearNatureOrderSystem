@@ -34,7 +34,7 @@ namespace PearNatureOrderSystem.Services
                 UserModel defaultUser = new UserModel();
                 defaultUser.Ident = GetTimeForInt();
                 defaultUser.Account = "Elliot";
-                defaultUser.Password = "123465";
+                defaultUser.Password = "123456";
                 defaultUser.Name = "Elliot";
                 defaultUser.isAdmin = true;
                 defaultUser.SaltKey = MD5.GenerateKey();
@@ -101,11 +101,12 @@ namespace PearNatureOrderSystem.Services
         /// <returns></returns>
         public bool Login(string account, string password)
         {
-            var saveUser = _userRepo.GetAll().FirstOrDefault(x => x.Name == account.Trim());
+            var saveUser = _userRepo.GetAll().FirstOrDefault(x => x.Name.ToUpper() == account.Trim().ToUpper());
             var user = ConvertToUserModel(saveUser);
-            if (user != null)
+            if (user != null && user.Password.Equals(password.Trim()))
             {
-                return user.Password == password.Trim();
+                Appdata.loginUser = user;
+                return true;
             }
             return false;
         }
