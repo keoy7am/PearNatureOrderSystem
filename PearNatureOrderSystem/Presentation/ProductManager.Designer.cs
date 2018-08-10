@@ -28,28 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tb_CategroyName = new MetroFramework.Controls.MetroTextBox();
-            this.lb_Name = new MetroFramework.Controls.MetroLabel();
-            this.btn_Cate_Update = new MetroFramework.Controls.MetroButton();
             this.btn_Cate_Insert = new MetroFramework.Controls.MetroButton();
             this.btn_Cate_Delete = new MetroFramework.Controls.MetroButton();
-            this.btn_Prod_Insert = new MetroFramework.Controls.MetroButton();
-            this.btn_Prod_Delete = new MetroFramework.Controls.MetroButton();
-            this.btn_Prod_Update = new MetroFramework.Controls.MetroButton();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.btn_Cate_Update = new MetroFramework.Controls.MetroButton();
+            this.lb_Name = new MetroFramework.Controls.MetroLabel();
+            this.tb_CategoryName = new MetroFramework.Controls.MetroTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.btn_Prod_Insert = new MetroFramework.Controls.MetroButton();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.btn_Prod_Delete = new MetroFramework.Controls.MetroButton();
+            this.btn_Prod_Update = new MetroFramework.Controls.MetroButton();
+            this.grid_Category = new MetroFramework.Controls.MetroGrid();
+            this.grid_Product = new MetroFramework.Controls.MetroGrid();
+            this.btn_Cate_Clear = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Category)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Product)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -70,37 +77,87 @@
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "品項";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(345, 341);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(383, 86);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(345, 341);
-            this.dataGridView2.TabIndex = 3;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_Cate_Clear);
             this.groupBox1.Controls.Add(this.btn_Cate_Insert);
             this.groupBox1.Controls.Add(this.btn_Cate_Delete);
             this.groupBox1.Controls.Add(this.btn_Cate_Update);
             this.groupBox1.Controls.Add(this.lb_Name);
-            this.groupBox1.Controls.Add(this.tb_CategroyName);
+            this.groupBox1.Controls.Add(this.tb_CategoryName);
             this.groupBox1.Location = new System.Drawing.Point(24, 434);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 163);
+            this.groupBox1.Size = new System.Drawing.Size(345, 219);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "分類管理";
+            // 
+            // btn_Cate_Insert
+            // 
+            this.btn_Cate_Insert.Location = new System.Drawing.Point(25, 85);
+            this.btn_Cate_Insert.Name = "btn_Cate_Insert";
+            this.btn_Cate_Insert.Size = new System.Drawing.Size(134, 61);
+            this.btn_Cate_Insert.TabIndex = 3;
+            this.btn_Cate_Insert.Text = "新增";
+            this.btn_Cate_Insert.UseSelectable = true;
+            this.btn_Cate_Insert.Click += new System.EventHandler(this.btn_Cate_Insert_Click);
+            // 
+            // btn_Cate_Delete
+            // 
+            this.btn_Cate_Delete.Location = new System.Drawing.Point(25, 152);
+            this.btn_Cate_Delete.Name = "btn_Cate_Delete";
+            this.btn_Cate_Delete.Size = new System.Drawing.Size(134, 61);
+            this.btn_Cate_Delete.TabIndex = 4;
+            this.btn_Cate_Delete.Text = "刪除";
+            this.btn_Cate_Delete.UseSelectable = true;
+            // 
+            // btn_Cate_Update
+            // 
+            this.btn_Cate_Update.Location = new System.Drawing.Point(165, 85);
+            this.btn_Cate_Update.Name = "btn_Cate_Update";
+            this.btn_Cate_Update.Size = new System.Drawing.Size(134, 61);
+            this.btn_Cate_Update.TabIndex = 2;
+            this.btn_Cate_Update.Text = "更新";
+            this.btn_Cate_Update.UseSelectable = true;
+            // 
+            // lb_Name
+            // 
+            this.lb_Name.AutoSize = true;
+            this.lb_Name.Location = new System.Drawing.Point(25, 41);
+            this.lb_Name.Name = "lb_Name";
+            this.lb_Name.Size = new System.Drawing.Size(65, 19);
+            this.lb_Name.TabIndex = 1;
+            this.lb_Name.Text = "分類名稱";
+            // 
+            // tb_CategoryName
+            // 
+            // 
+            // 
+            // 
+            this.tb_CategoryName.CustomButton.Image = null;
+            this.tb_CategoryName.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.tb_CategoryName.CustomButton.Name = "";
+            this.tb_CategoryName.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tb_CategoryName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb_CategoryName.CustomButton.TabIndex = 1;
+            this.tb_CategoryName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb_CategoryName.CustomButton.UseSelectable = true;
+            this.tb_CategoryName.CustomButton.Visible = false;
+            this.tb_CategoryName.Lines = new string[0];
+            this.tb_CategoryName.Location = new System.Drawing.Point(96, 41);
+            this.tb_CategoryName.MaxLength = 32767;
+            this.tb_CategoryName.Name = "tb_CategoryName";
+            this.tb_CategoryName.PasswordChar = '\0';
+            this.tb_CategoryName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb_CategoryName.SelectedText = "";
+            this.tb_CategoryName.SelectionLength = 0;
+            this.tb_CategoryName.SelectionStart = 0;
+            this.tb_CategoryName.ShortcutsEnabled = true;
+            this.tb_CategoryName.Size = new System.Drawing.Size(203, 23);
+            this.tb_CategoryName.TabIndex = 0;
+            this.tb_CategoryName.UseSelectable = true;
+            this.tb_CategoryName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb_CategoryName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // groupBox2
             // 
@@ -113,142 +170,10 @@
             this.groupBox2.Controls.Add(this.btn_Prod_Update);
             this.groupBox2.Location = new System.Drawing.Point(383, 434);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(345, 163);
+            this.groupBox2.Size = new System.Drawing.Size(345, 219);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "品項管理";
-            // 
-            // tb_CategroyName
-            // 
-            // 
-            // 
-            // 
-            this.tb_CategroyName.CustomButton.Image = null;
-            this.tb_CategroyName.CustomButton.Location = new System.Drawing.Point(53, 1);
-            this.tb_CategroyName.CustomButton.Name = "";
-            this.tb_CategroyName.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.tb_CategroyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.tb_CategroyName.CustomButton.TabIndex = 1;
-            this.tb_CategroyName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.tb_CategroyName.CustomButton.UseSelectable = true;
-            this.tb_CategroyName.CustomButton.Visible = false;
-            this.tb_CategroyName.Lines = new string[0];
-            this.tb_CategroyName.Location = new System.Drawing.Point(236, 40);
-            this.tb_CategroyName.MaxLength = 32767;
-            this.tb_CategroyName.Name = "tb_CategroyName";
-            this.tb_CategroyName.PasswordChar = '\0';
-            this.tb_CategroyName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.tb_CategroyName.SelectedText = "";
-            this.tb_CategroyName.SelectionLength = 0;
-            this.tb_CategroyName.SelectionStart = 0;
-            this.tb_CategroyName.ShortcutsEnabled = true;
-            this.tb_CategroyName.Size = new System.Drawing.Size(75, 23);
-            this.tb_CategroyName.TabIndex = 0;
-            this.tb_CategroyName.UseSelectable = true;
-            this.tb_CategroyName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tb_CategroyName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lb_Name
-            // 
-            this.lb_Name.AutoSize = true;
-            this.lb_Name.Location = new System.Drawing.Point(165, 40);
-            this.lb_Name.Name = "lb_Name";
-            this.lb_Name.Size = new System.Drawing.Size(65, 19);
-            this.lb_Name.TabIndex = 1;
-            this.lb_Name.Text = "分類名稱";
-            // 
-            // btn_Cate_Update
-            // 
-            this.btn_Cate_Update.Location = new System.Drawing.Point(25, 21);
-            this.btn_Cate_Update.Name = "btn_Cate_Update";
-            this.btn_Cate_Update.Size = new System.Drawing.Size(134, 61);
-            this.btn_Cate_Update.TabIndex = 2;
-            this.btn_Cate_Update.Text = "更新";
-            this.btn_Cate_Update.UseSelectable = true;
-            // 
-            // btn_Cate_Insert
-            // 
-            this.btn_Cate_Insert.Location = new System.Drawing.Point(165, 88);
-            this.btn_Cate_Insert.Name = "btn_Cate_Insert";
-            this.btn_Cate_Insert.Size = new System.Drawing.Size(146, 61);
-            this.btn_Cate_Insert.TabIndex = 3;
-            this.btn_Cate_Insert.Text = "新增";
-            this.btn_Cate_Insert.UseSelectable = true;
-            // 
-            // btn_Cate_Delete
-            // 
-            this.btn_Cate_Delete.Location = new System.Drawing.Point(25, 88);
-            this.btn_Cate_Delete.Name = "btn_Cate_Delete";
-            this.btn_Cate_Delete.Size = new System.Drawing.Size(134, 61);
-            this.btn_Cate_Delete.TabIndex = 4;
-            this.btn_Cate_Delete.Text = "刪除";
-            this.btn_Cate_Delete.UseSelectable = true;
-            // 
-            // btn_Prod_Insert
-            // 
-            this.btn_Prod_Insert.Location = new System.Drawing.Point(161, 88);
-            this.btn_Prod_Insert.Name = "btn_Prod_Insert";
-            this.btn_Prod_Insert.Size = new System.Drawing.Size(146, 61);
-            this.btn_Prod_Insert.TabIndex = 6;
-            this.btn_Prod_Insert.Text = "新增";
-            this.btn_Prod_Insert.UseSelectable = true;
-            // 
-            // btn_Prod_Delete
-            // 
-            this.btn_Prod_Delete.Location = new System.Drawing.Point(21, 88);
-            this.btn_Prod_Delete.Name = "btn_Prod_Delete";
-            this.btn_Prod_Delete.Size = new System.Drawing.Size(134, 61);
-            this.btn_Prod_Delete.TabIndex = 7;
-            this.btn_Prod_Delete.Text = "刪除";
-            this.btn_Prod_Delete.UseSelectable = true;
-            // 
-            // btn_Prod_Update
-            // 
-            this.btn_Prod_Update.Location = new System.Drawing.Point(21, 21);
-            this.btn_Prod_Update.Name = "btn_Prod_Update";
-            this.btn_Prod_Update.Size = new System.Drawing.Size(134, 61);
-            this.btn_Prod_Update.TabIndex = 5;
-            this.btn_Prod_Update.Text = "更新";
-            this.btn_Prod_Update.UseSelectable = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(161, 21);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "商品名稱";
-            // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(53, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(232, 21);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(75, 23);
-            this.metroTextBox1.TabIndex = 5;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel4
             // 
@@ -289,25 +214,196 @@
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(161, 21);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel3.TabIndex = 6;
+            this.metroLabel3.Text = "商品名稱";
+            // 
+            // btn_Prod_Insert
+            // 
+            this.btn_Prod_Insert.Location = new System.Drawing.Point(161, 152);
+            this.btn_Prod_Insert.Name = "btn_Prod_Insert";
+            this.btn_Prod_Insert.Size = new System.Drawing.Size(146, 61);
+            this.btn_Prod_Insert.TabIndex = 6;
+            this.btn_Prod_Insert.Text = "新增";
+            this.btn_Prod_Insert.UseSelectable = true;
+            this.btn_Prod_Insert.Click += new System.EventHandler(this.btn_Prod_Insert_Click);
+            // 
+            // metroTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.Lines = new string[0];
+            this.metroTextBox1.Location = new System.Drawing.Point(232, 21);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(75, 23);
+            this.metroTextBox1.TabIndex = 5;
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btn_Prod_Delete
+            // 
+            this.btn_Prod_Delete.Location = new System.Drawing.Point(21, 152);
+            this.btn_Prod_Delete.Name = "btn_Prod_Delete";
+            this.btn_Prod_Delete.Size = new System.Drawing.Size(134, 61);
+            this.btn_Prod_Delete.TabIndex = 7;
+            this.btn_Prod_Delete.Text = "刪除";
+            this.btn_Prod_Delete.UseSelectable = true;
+            // 
+            // btn_Prod_Update
+            // 
+            this.btn_Prod_Update.Location = new System.Drawing.Point(21, 85);
+            this.btn_Prod_Update.Name = "btn_Prod_Update";
+            this.btn_Prod_Update.Size = new System.Drawing.Size(134, 61);
+            this.btn_Prod_Update.TabIndex = 5;
+            this.btn_Prod_Update.Text = "更新";
+            this.btn_Prod_Update.UseSelectable = true;
+            // 
+            // grid_Category
+            // 
+            this.grid_Category.AllowUserToAddRows = false;
+            this.grid_Category.AllowUserToDeleteRows = false;
+            this.grid_Category.AllowUserToResizeRows = false;
+            this.grid_Category.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_Category.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grid_Category.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grid_Category.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_Category.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grid_Category.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_Category.DefaultCellStyle = dataGridViewCellStyle2;
+            this.grid_Category.EnableHeadersVisualStyles = false;
+            this.grid_Category.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.grid_Category.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_Category.Location = new System.Drawing.Point(24, 87);
+            this.grid_Category.Name = "grid_Category";
+            this.grid_Category.ReadOnly = true;
+            this.grid_Category.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_Category.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.grid_Category.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grid_Category.RowTemplate.Height = 24;
+            this.grid_Category.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grid_Category.Size = new System.Drawing.Size(345, 341);
+            this.grid_Category.TabIndex = 6;
+            // 
+            // grid_Product
+            // 
+            this.grid_Product.AllowUserToAddRows = false;
+            this.grid_Product.AllowUserToDeleteRows = false;
+            this.grid_Product.AllowUserToResizeRows = false;
+            this.grid_Product.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_Product.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grid_Product.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grid_Product.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.grid_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_Product.DefaultCellStyle = dataGridViewCellStyle5;
+            this.grid_Product.EnableHeadersVisualStyles = false;
+            this.grid_Product.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.grid_Product.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grid_Product.Location = new System.Drawing.Point(383, 87);
+            this.grid_Product.Name = "grid_Product";
+            this.grid_Product.ReadOnly = true;
+            this.grid_Product.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_Product.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grid_Product.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grid_Product.RowTemplate.Height = 24;
+            this.grid_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grid_Product.Size = new System.Drawing.Size(345, 341);
+            this.grid_Product.TabIndex = 7;
+            // 
+            // btn_Cate_Clear
+            // 
+            this.btn_Cate_Clear.Location = new System.Drawing.Point(165, 152);
+            this.btn_Cate_Clear.Name = "btn_Cate_Clear";
+            this.btn_Cate_Clear.Size = new System.Drawing.Size(134, 61);
+            this.btn_Cate_Clear.TabIndex = 5;
+            this.btn_Cate_Clear.Text = "清除";
+            this.btn_Cate_Clear.UseSelectable = true;
+            // 
             // ProductManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 614);
+            this.ClientSize = new System.Drawing.Size(754, 676);
+            this.Controls.Add(this.grid_Product);
+            this.Controls.Add(this.grid_Category);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "ProductManager";
+            this.Resizable = false;
             this.Text = "ProductManager";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Category)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_Product)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,15 +413,13 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroButton btn_Cate_Insert;
         private MetroFramework.Controls.MetroButton btn_Cate_Delete;
         private MetroFramework.Controls.MetroButton btn_Cate_Update;
         private MetroFramework.Controls.MetroLabel lb_Name;
-        private MetroFramework.Controls.MetroTextBox tb_CategroyName;
+        private MetroFramework.Controls.MetroTextBox tb_CategoryName;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
@@ -333,5 +427,8 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroButton btn_Prod_Delete;
         private MetroFramework.Controls.MetroButton btn_Prod_Update;
+        private MetroFramework.Controls.MetroGrid grid_Category;
+        private MetroFramework.Controls.MetroGrid grid_Product;
+        private MetroFramework.Controls.MetroButton btn_Cate_Clear;
     }
 }

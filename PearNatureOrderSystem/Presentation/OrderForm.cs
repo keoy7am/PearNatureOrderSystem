@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace PearNatureOrderSystem.Presentation
 {
-    public partial class ProductManager : DialogBase
+    public partial class OrderForm : BaseForm
     {
-        public ProductManager()
+        public OrderForm()
         {
             InitializeComponent();
-        }
-
-        private void btn_Cate_Insert_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Prod_Insert_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

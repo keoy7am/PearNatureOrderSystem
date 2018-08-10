@@ -8,7 +8,7 @@ namespace PearNatureOrderSystem.Models
 {
     public class UserModel
     {
-        public long Ident { get; set; }
+        public long Id { get; set; }
         public string Account { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -20,8 +20,8 @@ namespace PearNatureOrderSystem.Models
     /// </summary>
     public class UserSaveModel
     {
-        public long Ident { get; set; }
-        public string Name { get; set; }
+        public long Id { get; set; }
+        public string Account { get; set; }
         public string SaltKey { get; set; }
         /// <summary>
         /// 透過字串組合壓密
@@ -29,5 +29,6 @@ namespace PearNatureOrderSystem.Models
         public string UserModelString { get; set; }
 
         // TODO 建立壓密規則 Ex. AC|PW|isAdmin => MD5
+        // TODO 考慮改為 JWT Token or 單一加密字串
     }
 }

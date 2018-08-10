@@ -22,10 +22,12 @@ namespace PearNatureOrderSystem.Presentation
             if (IsProcessing())
             {
                 MessageBox.Show("程式已在執行中... 請勿重複執行。", "注意!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MetroMessageBox.Show(this, "程式已在執行中", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Environment.Exit(Environment.ExitCode);
             }
             InitializeComponent();
             userServices = new UserServices();
+            btn_Login.Focus();
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -36,15 +38,15 @@ namespace PearNatureOrderSystem.Presentation
             }
             if (userServices.Login(tb_Account.Text, tb_Password.Text))
             {
-                new MainForm().Show();
                 this.Hide();
+                FormController.mainForm.Show();
+                FormController.mainForm.CheckUserAuth();
             }
             else
             {
                 MetroMessageBox.Show(this, "帳號密碼錯誤！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tb_Password.Focus();
             }
-
         }
 
         #region Method
@@ -76,6 +78,12 @@ namespace PearNatureOrderSystem.Presentation
         {
             tb_Account.Text = string.Empty;
             tb_Password.Text = string.Empty;
+        }
+
+        private void LoginForm_Activated(object sender, EventArgs e)
+        {
+            tb_Password.Text = string.Empty;
+            tb_Account.Focus();
         }
     }
 }

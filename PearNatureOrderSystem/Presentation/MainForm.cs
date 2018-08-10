@@ -8,29 +8,38 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static PearNatureOrderSystem.Appdata;
 
 namespace PearNatureOrderSystem.Presentation
 {
     public partial class MainForm : BaseForm
     {
         System.Threading.Timer ThreadTimer; // 控制背景狀態更新
-        int OpenAdvanceSetting; // 控制是否開啟進階設定
         public MainForm()
         {
             InitializeComponent();
-            // Init Form
-            OpenAdvanceSetting = 0;
 
             // 背景狀態更新 Timer
             ThreadTimer = new System.Threading.Timer(StatusUpdater, null, 0, 1000);
-
+        }
+        public void CheckUserAuth()
+        {
             // 進階功能開關
-            if (loginUser.isAdmin)
+            if (Appdata.loginUser.isAdmin)
             {
                 btn_AccountManager.Visible = true;
                 btn_ProductManager.Visible = true;
+                btn_OrderManager.Visible = true;
+                btn_TableManager.Visible = true;
             }
+            else
+            {
+                btn_AccountManager.Visible = false;
+                btn_ProductManager.Visible = false;
+                btn_OrderManager.Visible = false;
+                btn_TableManager.Visible = false;
+            }
+
+            lb_LoginUser.Text = $"使用者：{Appdata.loginUser.Name}";
         }
 
 
@@ -52,32 +61,13 @@ namespace PearNatureOrderSystem.Presentation
         public void UpdateTimeStatus()
         {
             var now = DateTime.Now;
-            int longNow = Convert.ToInt32(now.ToString("ss"));
-            int temp = OpenAdvanceSetting;
             this.Invoke(new Action(() =>
             {
                 lb_time.Text = now.ToLongTimeString();
             }));
-
-            // 檢測是否開啟進階功能
-            //if (longNow % 3 == 0)
-            //{
-            //    OpenAdvanceSetting = 0;
-            //    if (temp > 4)
-            //    {
-            //        //TODO 顯示進階設定
-            //        btn_AccountManager.Visible = true;
-            //        btn_ProductManager.Visible = true;
-            //    }
-            //}
         }
 
         #region 控制項事件
-
-        private void lb_time_Click(object sender, EventArgs e)
-        {
-            OpenAdvanceSetting++;
-        }
 
         #endregion
 
@@ -85,10 +75,38 @@ namespace PearNatureOrderSystem.Presentation
         {
             new ProductManager().ShowDialog();
         }
-
+        #region Manager
         private void btn_AccountManager_Click(object sender, EventArgs e)
         {
             new AccountManager().ShowDialog();
+        }
+
+        private void btn_ChangePassword_Click(object sender, EventArgs e)
+        {
+            new ChangePasswordForm().ShowDialog();
+        }
+
+        private void btn_TableManager_Click(object sender, EventArgs e)
+        {
+            new TableManager().ShowDialog();
+        }
+
+        private void btn_OrderManager_Click(object sender, EventArgs e)
+        {
+            new OrderManager().ShowDialog();
+        }
+        #endregion
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+            this.Hide();
+            FormController.loginForm.Show();
+            Appdata.loginUser = null;
+        }
+        private void ResetForm()
+        {
+            CheckUserAuth();
         }
     }
 }

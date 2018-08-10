@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PearNatureOrderSystem.Models
 {
-    public class CategroyModel
+    public class CategoryModel
     {
-        public long Ident { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public List<ProductModel> Products{ get; set; }
         public long CreatedDateTime { get; set; }

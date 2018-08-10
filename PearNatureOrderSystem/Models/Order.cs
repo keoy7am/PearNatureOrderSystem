@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PearNatureOrderSystem.Services
+namespace PearNatureOrderSystem.Models
 {
-    class ProductServices
+    public class Order
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PearNatureOrderSystem.Services
 {
-    class ProductServices
+    class CategoryServices
     {
     }
 }

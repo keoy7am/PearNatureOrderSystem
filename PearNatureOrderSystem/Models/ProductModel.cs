@@ -8,9 +8,10 @@ namespace PearNatureOrderSystem.Models
 {
     public class ProductModel
     {
-        public long Ident { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
+        public int MealPrice { get; set; }
         public long CreatedDateTime { get; set; }
         public long ModifiedDateTime { get; set; }
     }

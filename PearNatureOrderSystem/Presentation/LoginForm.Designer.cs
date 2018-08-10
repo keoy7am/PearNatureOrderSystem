@@ -140,8 +140,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
+            this.Resizable = false;
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "PearNature Order System";
+            this.Activated += new System.EventHandler(this.LoginForm_Activated);
             this.ResumeLayout(false);
 
         }
