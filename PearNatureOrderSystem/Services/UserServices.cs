@@ -27,7 +27,7 @@ namespace PearNatureOrderSystem.Services
             // 預設帳密資訊
             //string account = "PearNature";
             //string password = "!QAZ2wsx";
-            string account = ConfigurationManager.AppSettings["DefaultAC"].ToString().Trim();
+            string account = ConfigurationManager.AppSettings["DefaultAdmin"].ToString().Trim();
             string password = "1";
             string name = "Administrator";
             UserModel defaultUser = new UserModel();
