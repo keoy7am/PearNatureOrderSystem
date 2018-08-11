@@ -12,7 +12,7 @@ namespace PearNatureOrderSystem.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public int MealPrice { get; set; }
-        public long CreatedDateTime { get; set; }
-        public long ModifiedDateTime { get; set; }
+        //public long CreatedDateTime { get; set; }
+        //public long ModifiedDateTime { get; set; }
     }
 }

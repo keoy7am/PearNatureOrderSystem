@@ -14,10 +14,7 @@ namespace PearNatureOrderSystem.Services
     {
         public delegate void TableChangedEvent();
         public static event TableChangedEvent TableChanged;
-
-        public static void InitTableSerices()
-        {
-        }
+        
         #region Misc
         public static BindingSource GetTableSource()
         {

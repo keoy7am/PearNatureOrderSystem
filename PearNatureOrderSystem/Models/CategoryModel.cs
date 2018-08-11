@@ -11,7 +11,7 @@ namespace PearNatureOrderSystem.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public List<ProductModel> Products{ get; set; }
-        public long CreatedDateTime { get; set; }
-        public long ModifiedDateTime { get; set; }
+        //public long CreatedDateTime { get; set; }
+        //public long ModifiedDateTime { get; set; }
     }
 }

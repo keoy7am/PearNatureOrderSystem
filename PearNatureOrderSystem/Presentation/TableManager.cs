@@ -35,7 +35,9 @@ namespace PearNatureOrderSystem.Presentation
         {
             try
             {
-                grid_Tables.Columns["Id"].HeaderText = "號碼";
+                grid_Tables.Columns["Id"].Visible = false;
+
+                //grid_Tables.Columns["Id"].HeaderText = "編號";
                 grid_Tables.Columns["Name"].HeaderText = "桌號名稱";
                 grid_Tables.Columns["Desc"].HeaderText = "桌號敘述";
             }
@@ -88,6 +90,8 @@ namespace PearNatureOrderSystem.Presentation
         {
             try
             {
+                DialogResult dr = MetroMessageBox.Show(this, $"\n\n是否確定要刪除 {tb_TableName.Text} ?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult.No == dr) { return; }
                 long tableId = Convert.ToInt64(grid_Tables.SelectedRows[0].Cells["Id"].Value);
                 
                 if (!_tableService.DeleteTable(tableId))
@@ -111,10 +115,14 @@ namespace PearNatureOrderSystem.Presentation
             if (tb_TableName.Text.Trim() == String.Empty)
             {
                 MetroMessageBox.Show(this, "請輸入桌號名稱！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tb_TableName.Focus();
+                return false;
             }
-            if (tb_TableDesc.Name.Trim() == String.Empty)
+            if (tb_TableDesc.Text.Trim() == String.Empty)
             {
                 MetroMessageBox.Show(this, "請輸入桌號敘述！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tb_TableDesc.Focus();
+                return false;
             }
             return true;
         }

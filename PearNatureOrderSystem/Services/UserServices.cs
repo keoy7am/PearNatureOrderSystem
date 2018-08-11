@@ -8,6 +8,7 @@ using static PearNatureOrderSystem.Library.CommonBase;
 using System.Windows.Forms;
 using System.ComponentModel;
 using LiteDB;
+using System.Configuration;
 
 namespace PearNatureOrderSystem.Services
 {
@@ -26,7 +27,7 @@ namespace PearNatureOrderSystem.Services
             // 預設帳密資訊
             //string account = "PearNature";
             //string password = "!QAZ2wsx";
-            string account = "1";
+            string account = ConfigurationManager.AppSettings["DefaultAC"].ToString().Trim();
             string password = "1";
             string name = "Administrator";
             UserModel defaultUser = new UserModel();
