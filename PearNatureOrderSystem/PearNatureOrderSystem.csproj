@@ -65,7 +65,7 @@
     <Compile Include="Appdata.cs" />
     <Compile Include="Library\CommonBase.cs" />
     <Compile Include="Models\CategoryModel.cs" />
-    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -133,6 +133,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CategoryServices.cs" />
+    <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\TableServices.cs" />
     <Compile Include="Services\UserServices.cs" />
     <EmbeddedResource Include="Presentation\AccountManager.resx">

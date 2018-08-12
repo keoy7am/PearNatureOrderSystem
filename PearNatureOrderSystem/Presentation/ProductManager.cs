@@ -32,18 +32,19 @@ namespace PearNatureOrderSystem.Presentation
         {
             grid_Category.DataSource = CategoryServices.GetCateSource();
             InitCateGridView();
+            grid_Category.ClearSelection();
         }
         private void reloadProduct()
         {
-            if (SelectedCateId > 0)
+            try
             {
-                grid_Product.DataSource = CategoryServices.GetProductSourceByCateID(SelectedCateId);
-            }
-            else
+                int cateId = Convert.ToInt32(grid_Category.SelectedRows[0].Cells["Id"].Value);
+                grid_Product.DataSource = CategoryServices.GetProductSourceByCateID(cateId);
+                InitProdGridView();
+            }catch(Exception ex)
             {
-                grid_Product.DataSource = null;
+
             }
-            InitProdGridView();
         }
         private void InitCateGridView()
         {
@@ -255,7 +256,6 @@ namespace PearNatureOrderSystem.Presentation
             {
                 DialogResult dr = MetroMessageBox.Show(this, $"\n\n是否確定要刪除 商品 {grid_Product.SelectedRows[0].Cells["Name"].Value.ToString()} ?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult.No == dr) { return; }
-                if (!CheckProdInput()) { return; }
                 long cateId = Convert.ToInt64(grid_Category.SelectedRows[0].Cells["Id"].Value);
                 long prodId = Convert.ToInt64(grid_Product.SelectedRows[0].Cells["Id"].Value);
                 CategoryModel category = _categoryServices.QueryCategoryById(cateId);
