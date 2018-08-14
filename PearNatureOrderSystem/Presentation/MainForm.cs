@@ -30,6 +30,7 @@ namespace PearNatureOrderSystem.Presentation
             CategoryServices.CategoryChanged += (ReloadCategory);
             CategoryServices.ProductChanged += (ReloadProduct);
             OrderServices.OrderCartChanged += (ReloadOrderCart);
+            TableServices.TableChanged += (ReloadTable);
             ResetForm();
         }
         
@@ -138,6 +139,7 @@ namespace PearNatureOrderSystem.Presentation
         {
             CheckUserAuth();
             ReloadCategory();
+            ReloadTable();
             OrderServices.ResetOrderCart();
         }
         /// <summary>
@@ -179,6 +181,19 @@ namespace PearNatureOrderSystem.Presentation
                 lb_totalPrice.Text = $"總金額： {OrderServices.GetTotalPrice()}";
             }
             catch (Exception ex)
+            {
+
+            }
+        }
+        private void ReloadTable()
+        {
+            try
+            {
+                cb_Table.DataSource = TableServices.GetTableSource();
+                cb_Table.DisplayMember = "Name";
+                cb_Table.ValueMember = "Name";
+            }
+            catch(Exception ex)
             {
 
             }
@@ -272,12 +287,17 @@ namespace PearNatureOrderSystem.Presentation
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
+            if (cb_Table.SelectedValue.ToString().Length <= 0)
+            {
+                MetroMessageBox.Show(this, $"請選擇桌號。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (OrderServices.orderCartDetails.Count <= 0)
             {
                 MetroMessageBox.Show(this, $"請先將商品加入訂單列表。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var result = PrintHelper.Print();
+            var result = PrintHelper.Print(cb_Table.SelectedValue.ToString());
             if (result[0].ToString().ToLower() == "true")
             {
                 OrderServices.ResetOrderCart();

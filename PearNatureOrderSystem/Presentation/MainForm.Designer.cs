@@ -55,6 +55,7 @@
             this.grid_cate = new MetroFramework.Controls.MetroGrid();
             this.btn_TableManager = new MetroFramework.Controls.MetroButton();
             this.btn_OrderManager = new MetroFramework.Controls.MetroButton();
+            this.cb_Table = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_OrderCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_prod)).BeginInit();
@@ -117,7 +118,7 @@
             // lb_totalPrice
             // 
             this.lb_totalPrice.AutoSize = true;
-            this.lb_totalPrice.Location = new System.Drawing.Point(619, 477);
+            this.lb_totalPrice.Location = new System.Drawing.Point(619, 494);
             this.lb_totalPrice.Name = "lb_totalPrice";
             this.lb_totalPrice.Size = new System.Drawing.Size(65, 19);
             this.lb_totalPrice.TabIndex = 4;
@@ -163,6 +164,7 @@
             this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.Controls.Add(this.cb_Table);
             this.metroPanel1.Controls.Add(this.btn_Print);
             this.metroPanel1.Controls.Add(this.lb_list);
             this.metroPanel1.Controls.Add(this.btn_ClearOrderList);
@@ -379,6 +381,16 @@
             this.btn_OrderManager.Visible = false;
             this.btn_OrderManager.Click += new System.EventHandler(this.btn_OrderManager_Click);
             // 
+            // cb_Table
+            // 
+            this.cb_Table.FormattingEnabled = true;
+            this.cb_Table.ItemHeight = 23;
+            this.cb_Table.Location = new System.Drawing.Point(619, 462);
+            this.cb_Table.Name = "cb_Table";
+            this.cb_Table.Size = new System.Drawing.Size(162, 29);
+            this.cb_Table.TabIndex = 8;
+            this.cb_Table.UseSelectable = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -429,5 +441,6 @@
         private MetroFramework.Controls.MetroButton btn_ChangePassword;
         private MetroFramework.Controls.MetroButton btn_TableManager;
         private MetroFramework.Controls.MetroButton btn_OrderManager;
+        private MetroFramework.Controls.MetroComboBox cb_Table;
     }
 }

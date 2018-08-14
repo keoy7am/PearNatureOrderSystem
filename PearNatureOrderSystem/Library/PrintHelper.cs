@@ -13,8 +13,10 @@ namespace PearNatureOrderSystem.Library
 {
     public static class PrintHelper
     {
-        public static object[] Print()
+        static string table;
+        public static object[] Print(string Table)
         {
+            table = Table;
             object[] returnObj = new object[2];
             returnObj[0] = false;
             returnObj[1] = "";
@@ -44,6 +46,10 @@ namespace PearNatureOrderSystem.Library
             {
                 returnObj[0] = false;
                 returnObj[1] = ex.Message;
+            }
+            finally
+            {
+                table = string.Empty;
             }
             return returnObj;
         } 
@@ -95,26 +101,27 @@ namespace PearNatureOrderSystem.Library
 
             // 標頭
             e.Graphics.DrawString("訂單明細", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(60, CalcMarginY(0)));
-            e.Graphics.DrawString("-----------------------------------", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(1)));
-            e.Graphics.DrawString(StringHandle("品項", "數量", "金額"), new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(2)));
-            int startIndex = 3; // 上列標頭行數
+            e.Graphics.DrawString($"桌號：{table}", new Font("微軟正黑體", 12,FontStyle.Bold), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(1)));
+            e.Graphics.DrawString("-----------------------------------", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(2)));
+            e.Graphics.DrawString(StringHandle("品項", "數量", "金額"), new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(3)));
+            int startIndex = 4; // 上列標頭行數
             // 繪出訂單內容
             foreach (var item in OrderServices.orderCartDetails)
             {
-                e.Graphics.DrawString(item.Name, new Font("微軟正黑體", 8), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex)));
-                e.Graphics.DrawString(item.Count.ToString(), new Font("微軟正黑體", 8), new SolidBrush(Color.Black), new PointF(90, CalcMarginY(startIndex)));
-                e.Graphics.DrawString(item.TotalPrice.ToString(), new Font("微軟正黑體", 8), new SolidBrush(Color.Black), new PointF(150, CalcMarginY(startIndex)));
+                e.Graphics.DrawString(item.Name, new Font("微軟正黑體", 9, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex)));
+                e.Graphics.DrawString(item.Count.ToString(), new Font("微軟正黑體", 9), new SolidBrush(Color.Black), new PointF(100, CalcMarginY(startIndex)));
+                e.Graphics.DrawString(item.TotalPrice.ToString(), new Font("微軟正黑體", 9), new SolidBrush(Color.Black), new PointF(150, CalcMarginY(startIndex)));
                 startIndex++;
             }
             // 單尾
             e.Graphics.DrawString("-----------------------------------", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+1)));
             if (OrderServices.GetTotalPrice() < 1000)
             {
-                e.Graphics.DrawString($"總金額 {OrderServices.GetTotalPrice()} 元", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(100, CalcMarginY(startIndex + 2)));
+                e.Graphics.DrawString($"總金額 {OrderServices.GetTotalPrice()} 元", new Font("微軟正黑體", 10, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(100, CalcMarginY(startIndex + 2)));
             }
             else
             {
-                e.Graphics.DrawString($"總金額 {OrderServices.GetTotalPrice()} 元", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(90, CalcMarginY(startIndex + 2)));
+                e.Graphics.DrawString($"總金額 {OrderServices.GetTotalPrice()} 元", new Font("微軟正黑體", 10, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(90, CalcMarginY(startIndex + 2)));
             }
             e.Graphics.DrawString($"印單人 {Appdata.loginUser.Name}", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+3)));
         }
