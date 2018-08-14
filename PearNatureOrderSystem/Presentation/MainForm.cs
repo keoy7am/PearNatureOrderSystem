@@ -1,4 +1,5 @@
 ﻿using MetroFramework;
+using PearNatureOrderSystem.Library;
 using PearNatureOrderSystem.Services;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,12 @@ namespace PearNatureOrderSystem.Presentation
             var products = CategoryServices.QueryProductsByCateId(cateId);
             var product = products.FirstOrDefault(x => x.Id == prodId);
             new OrderForm(product).ShowDialog();
+        }
+        #endregion
+        #region btn_ClearOrderList 清除訂單
+        private void btn_ClearOrderList_Click(object sender, EventArgs e)
+        {
+            OrderServices.ResetOrderCart();
         }
         #endregion
         #endregion
@@ -169,6 +176,7 @@ namespace PearNatureOrderSystem.Presentation
                 grid_OrderCart.DataSource = OrderServices.GetOrderCartSource();
                 InitOrderCartGridView();
                 grid_OrderCart.ClearSelection();
+                lb_totalPrice.Text = $"總金額： {OrderServices.GetTotalPrice()}";
             }
             catch (Exception ex)
             {
@@ -261,5 +269,24 @@ namespace PearNatureOrderSystem.Presentation
             }));
         }
         #endregion
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            if (OrderServices.orderCartDetails.Count <= 0)
+            {
+                MetroMessageBox.Show(this, $"請先將商品加入訂單列表。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var result = PrintHelper.Print();
+            if (result[0].ToString().ToLower() == "true")
+            {
+                OrderServices.ResetOrderCart();
+                //OrderServices.AddRecord();
+            }
+            else
+            {
+                MetroMessageBox.Show(this, $"列印失敗。 錯誤訊息：{result[1].ToString()}", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

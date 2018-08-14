@@ -29,6 +29,16 @@ namespace PearNatureOrderSystem.Services
         {
             orderCartDetails = new List<OrderDetailModel>();
             idCounter = 0;
+            OrderCartChanged();
+        }
+        public static int GetTotalPrice()
+        {
+            int totalPrice = 0;
+            foreach(var item in orderCartDetails)
+            {
+                totalPrice += item.TotalPrice;
+            }
+            return totalPrice;
         }
         public void AddToCart(OrderDetailModel orderDetail)
         {

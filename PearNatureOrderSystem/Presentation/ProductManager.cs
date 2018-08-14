@@ -214,7 +214,8 @@ namespace PearNatureOrderSystem.Presentation
             }
             catch (Exception ex)
             {
-                MetroMessageBox.Show(this, $"新增商品失敗，錯誤資訊：{ex.Message}。", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MetroMessageBox.Show(this, $"新增商品失敗，錯誤資訊：{ex.Message}。", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MetroMessageBox.Show(this, $"新增商品失敗，未選擇分類。", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -284,6 +285,8 @@ namespace PearNatureOrderSystem.Presentation
             {
                 SelectedCateId = Convert.ToInt32(grid_Category.Rows[e.RowIndex].Cells["Id"].Value);
                 reloadProduct();
+
+                ClearProdForm();
             }
             catch(Exception ex)
             {
@@ -307,6 +310,13 @@ namespace PearNatureOrderSystem.Presentation
         }
 
         private void btn_Product_Clear_Click(object sender, EventArgs e)
+        {
+            ClearProdForm();
+        }
+        /// <summary>
+        /// 清除商品欄位
+        /// </summary>
+        private void ClearProdForm()
         {
             tb_ProductName.Clear();
             tb_ProductPrice.Clear();

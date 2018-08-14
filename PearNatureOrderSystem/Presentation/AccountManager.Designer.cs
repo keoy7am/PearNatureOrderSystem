@@ -150,7 +150,6 @@
             this.tb_Account.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tb_Account.CustomButton.UseSelectable = true;
             this.tb_Account.CustomButton.Visible = false;
-            this.tb_Account.Enabled = false;
             this.tb_Account.Lines = new string[0];
             this.tb_Account.Location = new System.Drawing.Point(56, 18);
             this.tb_Account.MaxLength = 32767;

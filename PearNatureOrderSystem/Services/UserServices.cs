@@ -303,7 +303,7 @@ namespace PearNatureOrderSystem.Services
                     if (user != null)
                     {
                         var userModel = ConvertToUserModel(user);
-                        userModel.Account = account;
+                        //userModel.Account = account; // TODO 確認是否能修改登入帳號
                         userModel.Password = password;
                         userModel.Name = name;
 

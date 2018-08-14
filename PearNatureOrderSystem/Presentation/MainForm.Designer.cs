@@ -86,7 +86,7 @@
             this.lb_LoginUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_LoginUser.AutoSize = true;
             this.lb_LoginUser.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lb_LoginUser.Location = new System.Drawing.Point(675, 32);
+            this.lb_LoginUser.Location = new System.Drawing.Point(716, 18);
             this.lb_LoginUser.Name = "lb_LoginUser";
             this.lb_LoginUser.Size = new System.Drawing.Size(88, 25);
             this.lb_LoginUser.TabIndex = 8;
@@ -94,9 +94,9 @@
             // 
             // btn_AccountManager
             // 
-            this.btn_AccountManager.Location = new System.Drawing.Point(578, 16);
+            this.btn_AccountManager.Location = new System.Drawing.Point(819, 252);
             this.btn_AccountManager.Name = "btn_AccountManager";
-            this.btn_AccountManager.Size = new System.Drawing.Size(91, 41);
+            this.btn_AccountManager.Size = new System.Drawing.Size(117, 41);
             this.btn_AccountManager.TabIndex = 7;
             this.btn_AccountManager.Text = "帳號管理";
             this.btn_AccountManager.UseSelectable = true;
@@ -105,9 +105,9 @@
             // 
             // btn_ProductManager
             // 
-            this.btn_ProductManager.Location = new System.Drawing.Point(287, 16);
+            this.btn_ProductManager.Location = new System.Drawing.Point(819, 111);
             this.btn_ProductManager.Name = "btn_ProductManager";
-            this.btn_ProductManager.Size = new System.Drawing.Size(91, 41);
+            this.btn_ProductManager.Size = new System.Drawing.Size(117, 41);
             this.btn_ProductManager.TabIndex = 6;
             this.btn_ProductManager.Text = "產品管理";
             this.btn_ProductManager.UseSelectable = true;
@@ -117,33 +117,35 @@
             // lb_totalPrice
             // 
             this.lb_totalPrice.AutoSize = true;
-            this.lb_totalPrice.Location = new System.Drawing.Point(664, 477);
+            this.lb_totalPrice.Location = new System.Drawing.Point(619, 477);
             this.lb_totalPrice.Name = "lb_totalPrice";
-            this.lb_totalPrice.Size = new System.Drawing.Size(93, 19);
+            this.lb_totalPrice.Size = new System.Drawing.Size(65, 19);
             this.lb_totalPrice.TabIndex = 4;
-            this.lb_totalPrice.Text = "總金額：9999";
+            this.lb_totalPrice.Text = "總金額：";
             // 
             // btn_Print
             // 
             this.btn_Print.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Print.Location = new System.Drawing.Point(567, 455);
+            this.btn_Print.Location = new System.Drawing.Point(532, 461);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(91, 60);
+            this.btn_Print.Size = new System.Drawing.Size(65, 60);
             this.btn_Print.TabIndex = 3;
             this.btn_Print.Text = "列印";
             this.btn_Print.UseSelectable = true;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // btn_ClearOrderList
             // 
             this.btn_ClearOrderList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ClearOrderList.Location = new System.Drawing.Point(461, 455);
+            this.btn_ClearOrderList.Location = new System.Drawing.Point(461, 461);
             this.btn_ClearOrderList.Name = "btn_ClearOrderList";
-            this.btn_ClearOrderList.Size = new System.Drawing.Size(91, 60);
+            this.btn_ClearOrderList.Size = new System.Drawing.Size(65, 60);
             this.btn_ClearOrderList.TabIndex = 2;
-            this.btn_ClearOrderList.Text = "清除";
+            this.btn_ClearOrderList.Text = "清除訂單";
             this.btn_ClearOrderList.UseSelectable = true;
+            this.btn_ClearOrderList.Click += new System.EventHandler(this.btn_ClearOrderList_Click);
             // 
             // lb_time
             // 
@@ -173,9 +175,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(20, 63);
+            this.metroPanel1.Location = new System.Drawing.Point(20, 57);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(784, 518);
+            this.metroPanel1.Size = new System.Drawing.Size(784, 524);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -188,7 +190,7 @@
             this.lb_list.Name = "lb_list";
             this.lb_list.Size = new System.Drawing.Size(65, 19);
             this.lb_list.TabIndex = 7;
-            this.lb_list.Text = "已選清單";
+            this.lb_list.Text = "訂單列表";
             // 
             // grid_OrderCart
             // 
@@ -356,9 +358,9 @@
             // 
             // btn_TableManager
             // 
-            this.btn_TableManager.Location = new System.Drawing.Point(384, 16);
+            this.btn_TableManager.Location = new System.Drawing.Point(819, 158);
             this.btn_TableManager.Name = "btn_TableManager";
-            this.btn_TableManager.Size = new System.Drawing.Size(91, 41);
+            this.btn_TableManager.Size = new System.Drawing.Size(117, 41);
             this.btn_TableManager.TabIndex = 11;
             this.btn_TableManager.Text = "桌號管理";
             this.btn_TableManager.UseSelectable = true;
@@ -367,9 +369,10 @@
             // 
             // btn_OrderManager
             // 
-            this.btn_OrderManager.Location = new System.Drawing.Point(481, 16);
+            this.btn_OrderManager.Enabled = false;
+            this.btn_OrderManager.Location = new System.Drawing.Point(819, 205);
             this.btn_OrderManager.Name = "btn_OrderManager";
-            this.btn_OrderManager.Size = new System.Drawing.Size(91, 41);
+            this.btn_OrderManager.Size = new System.Drawing.Size(117, 41);
             this.btn_OrderManager.TabIndex = 12;
             this.btn_OrderManager.Text = "銷售管理";
             this.btn_OrderManager.UseSelectable = true;

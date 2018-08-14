@@ -50,7 +50,7 @@ namespace PearNatureOrderSystem.Presentation
             {
                 if (isMeal)
                 {
-                    orderDetail.Name = $"{product.Name} (套餐)";
+                    orderDetail.Name = $"{product.Name} (*)";
                     if (product.Price > product.MealPrice)
                     {
                         price = product.Price - product.MealPrice;
@@ -68,7 +68,7 @@ namespace PearNatureOrderSystem.Presentation
             }
             else
             {
-                orderDetail.Name = $"{product.Name} (套餐)";
+                orderDetail.Name = $"{product.Name} (*)";
                 price = orderDetail.MealPrice;
             }
             orderDetail.TotalPrice = price * orderDetail.Count;
