@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,9 @@ namespace PearNatureOrderSystem.Presentation
 {
     public partial class LoginForm : BaseForm//MetroFramework.Forms.MetroForm
     {
+        [DllImport("User32.dll")]
+        public static extern Int32 SetForegroundWindow(int hWnd);
+
         string _password = string.Empty;
         UserServices userServices;
         public LoginForm()
@@ -28,6 +32,7 @@ namespace PearNatureOrderSystem.Presentation
             InitializeComponent();
             userServices = new UserServices();
             btn_Login.Focus();
+            SetForegroundWindow(Handle.ToInt32());
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
