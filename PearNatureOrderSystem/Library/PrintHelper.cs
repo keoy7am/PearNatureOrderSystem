@@ -38,7 +38,7 @@ namespace PearNatureOrderSystem.Library
                 //BytesValue = PrinterUtility.PrintExtensions.NewLine(BytesValue, 2);
                 BytesValue = PrinterUtility.PrintExtensions.AddBytes(BytesValue, CutPage());
                 // TODO 路徑設定方法須實測條碼列印機連線AP後的實際狀況
-                PrinterUtility.PrintExtensions.Print(BytesValue, $@"\\localhost\{GetDefaultPrinter()}");
+                PrinterUtility.PrintExtensions.Print(BytesValue, $"{GetDefaultPrinter()}");
 
                 returnObj[0] = true;
             }
@@ -124,6 +124,7 @@ namespace PearNatureOrderSystem.Library
                 e.Graphics.DrawString($"總金額 {OrderServices.GetTotalPrice()} 元", new Font("微軟正黑體", 10, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(90, CalcMarginY(startIndex + 2)));
             }
             e.Graphics.DrawString($"印單人 {Appdata.loginUser.Name}", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+3)));
+            //e.Graphics.DrawString($"Printer: {GetDefaultPrinter()}", new Font("微軟正黑體", 8), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+4)));
         }
         /// <summary>
         /// 計算該行數 Y 座標
