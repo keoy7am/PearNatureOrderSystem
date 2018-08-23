@@ -48,6 +48,7 @@
             this.grid_Tables.AllowUserToAddRows = false;
             this.grid_Tables.AllowUserToDeleteRows = false;
             this.grid_Tables.AllowUserToResizeRows = false;
+            this.grid_Tables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid_Tables.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.grid_Tables.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid_Tables.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -93,6 +94,7 @@
             // 
             // btn_Clear
             // 
+            this.btn_Clear.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Clear.Location = new System.Drawing.Point(298, 399);
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(77, 74);
@@ -103,6 +105,7 @@
             // 
             // btn_Delete
             // 
+            this.btn_Delete.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Delete.Location = new System.Drawing.Point(200, 399);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(77, 74);
@@ -113,6 +116,7 @@
             // 
             // btn_Update
             // 
+            this.btn_Update.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Update.Location = new System.Drawing.Point(107, 399);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(78, 74);
@@ -123,6 +127,7 @@
             // 
             // btn_Insert
             // 
+            this.btn_Insert.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Insert.Location = new System.Drawing.Point(14, 399);
             this.btn_Insert.Name = "btn_Insert";
             this.btn_Insert.Size = new System.Drawing.Size(78, 74);
@@ -134,18 +139,20 @@
             // lb_TableName
             // 
             this.lb_TableName.AutoSize = true;
+            this.lb_TableName.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lb_TableName.Location = new System.Drawing.Point(24, 311);
             this.lb_TableName.Name = "lb_TableName";
-            this.lb_TableName.Size = new System.Drawing.Size(51, 19);
+            this.lb_TableName.Size = new System.Drawing.Size(69, 25);
             this.lb_TableName.TabIndex = 14;
             this.lb_TableName.Text = "桌號：";
             // 
             // lb_TableDesc
             // 
             this.lb_TableDesc.AutoSize = true;
+            this.lb_TableDesc.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lb_TableDesc.Location = new System.Drawing.Point(24, 347);
             this.lb_TableDesc.Name = "lb_TableDesc";
-            this.lb_TableDesc.Size = new System.Drawing.Size(51, 19);
+            this.lb_TableDesc.Size = new System.Drawing.Size(69, 25);
             this.lb_TableDesc.TabIndex = 15;
             this.lb_TableDesc.Text = "備註：";
             // 
@@ -155,7 +162,7 @@
             // 
             // 
             this.tb_TableName.CustomButton.Image = null;
-            this.tb_TableName.CustomButton.Location = new System.Drawing.Point(266, 1);
+            this.tb_TableName.CustomButton.Location = new System.Drawing.Point(248, 1);
             this.tb_TableName.CustomButton.Name = "";
             this.tb_TableName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_TableName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -165,7 +172,7 @@
             this.tb_TableName.CustomButton.Visible = false;
             this.tb_TableName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tb_TableName.Lines = new string[0];
-            this.tb_TableName.Location = new System.Drawing.Point(81, 311);
+            this.tb_TableName.Location = new System.Drawing.Point(99, 311);
             this.tb_TableName.MaxLength = 32767;
             this.tb_TableName.Name = "tb_TableName";
             this.tb_TableName.PasswordChar = '\0';
@@ -174,7 +181,7 @@
             this.tb_TableName.SelectionLength = 0;
             this.tb_TableName.SelectionStart = 0;
             this.tb_TableName.ShortcutsEnabled = true;
-            this.tb_TableName.Size = new System.Drawing.Size(288, 23);
+            this.tb_TableName.Size = new System.Drawing.Size(270, 23);
             this.tb_TableName.TabIndex = 16;
             this.tb_TableName.UseSelectable = true;
             this.tb_TableName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -186,7 +193,7 @@
             // 
             // 
             this.tb_TableDesc.CustomButton.Image = null;
-            this.tb_TableDesc.CustomButton.Location = new System.Drawing.Point(266, 1);
+            this.tb_TableDesc.CustomButton.Location = new System.Drawing.Point(248, 1);
             this.tb_TableDesc.CustomButton.Name = "";
             this.tb_TableDesc.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_TableDesc.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -195,7 +202,7 @@
             this.tb_TableDesc.CustomButton.UseSelectable = true;
             this.tb_TableDesc.CustomButton.Visible = false;
             this.tb_TableDesc.Lines = new string[0];
-            this.tb_TableDesc.Location = new System.Drawing.Point(81, 347);
+            this.tb_TableDesc.Location = new System.Drawing.Point(99, 347);
             this.tb_TableDesc.MaxLength = 32767;
             this.tb_TableDesc.Name = "tb_TableDesc";
             this.tb_TableDesc.PasswordChar = '\0';
@@ -204,7 +211,7 @@
             this.tb_TableDesc.SelectionLength = 0;
             this.tb_TableDesc.SelectionStart = 0;
             this.tb_TableDesc.ShortcutsEnabled = true;
-            this.tb_TableDesc.Size = new System.Drawing.Size(288, 23);
+            this.tb_TableDesc.Size = new System.Drawing.Size(270, 23);
             this.tb_TableDesc.TabIndex = 17;
             this.tb_TableDesc.UseSelectable = true;
             this.tb_TableDesc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -224,6 +231,8 @@
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Insert);
             this.Controls.Add(this.grid_Tables);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TableManager";
             this.Resizable = false;
             this.Text = "TableManager";

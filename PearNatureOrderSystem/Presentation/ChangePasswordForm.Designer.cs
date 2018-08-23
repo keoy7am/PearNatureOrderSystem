@@ -39,39 +39,40 @@
             // lb_OriginalPassword
             // 
             this.lb_OriginalPassword.AutoSize = true;
-            this.lb_OriginalPassword.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lb_OriginalPassword.Location = new System.Drawing.Point(23, 95);
+            this.lb_OriginalPassword.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lb_OriginalPassword.Location = new System.Drawing.Point(22, 90);
             this.lb_OriginalPassword.Name = "lb_OriginalPassword";
-            this.lb_OriginalPassword.Size = new System.Drawing.Size(57, 20);
+            this.lb_OriginalPassword.Size = new System.Drawing.Size(75, 27);
             this.lb_OriginalPassword.TabIndex = 0;
             this.lb_OriginalPassword.Text = "舊密碼";
             // 
             // tb_OriginalPassword
             // 
-            this.tb_OriginalPassword.Location = new System.Drawing.Point(87, 95);
+            this.tb_OriginalPassword.Location = new System.Drawing.Point(105, 95);
             this.tb_OriginalPassword.Name = "tb_OriginalPassword";
-            this.tb_OriginalPassword.Size = new System.Drawing.Size(160, 22);
+            this.tb_OriginalPassword.Size = new System.Drawing.Size(142, 22);
             this.tb_OriginalPassword.TabIndex = 1;
             // 
             // tb_NewPassword
             // 
-            this.tb_NewPassword.Location = new System.Drawing.Point(87, 131);
+            this.tb_NewPassword.Location = new System.Drawing.Point(105, 131);
             this.tb_NewPassword.Name = "tb_NewPassword";
-            this.tb_NewPassword.Size = new System.Drawing.Size(160, 22);
+            this.tb_NewPassword.Size = new System.Drawing.Size(142, 22);
             this.tb_NewPassword.TabIndex = 3;
             // 
             // lb_NewPassword
             // 
             this.lb_NewPassword.AutoSize = true;
-            this.lb_NewPassword.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lb_NewPassword.Location = new System.Drawing.Point(23, 131);
+            this.lb_NewPassword.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lb_NewPassword.Location = new System.Drawing.Point(22, 126);
             this.lb_NewPassword.Name = "lb_NewPassword";
-            this.lb_NewPassword.Size = new System.Drawing.Size(57, 20);
+            this.lb_NewPassword.Size = new System.Drawing.Size(75, 27);
             this.lb_NewPassword.TabIndex = 2;
             this.lb_NewPassword.Text = "新密碼";
             // 
             // btn_UpdatePassword
             // 
+            this.btn_UpdatePassword.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_UpdatePassword.Location = new System.Drawing.Point(27, 166);
             this.btn_UpdatePassword.Name = "btn_UpdatePassword";
             this.btn_UpdatePassword.Size = new System.Drawing.Size(105, 53);
@@ -82,6 +83,7 @@
             // 
             // btn_Close
             // 
+            this.btn_Close.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btn_Close.Location = new System.Drawing.Point(142, 166);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(105, 53);
@@ -101,6 +103,8 @@
             this.Controls.Add(this.lb_NewPassword);
             this.Controls.Add(this.tb_OriginalPassword);
             this.Controls.Add(this.lb_OriginalPassword);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ChangePasswordForm";
             this.Resizable = false;
             this.Text = "ChangePasswordForm";

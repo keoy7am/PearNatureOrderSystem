@@ -68,6 +68,7 @@
             // 
             // btn_Clear
             // 
+            this.btn_Clear.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Clear.Location = new System.Drawing.Point(290, 98);
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(77, 74);
@@ -82,7 +83,7 @@
             // 
             // 
             this.tb_Name.CustomButton.Image = null;
-            this.tb_Name.CustomButton.Location = new System.Drawing.Point(289, 1);
+            this.tb_Name.CustomButton.Location = new System.Drawing.Point(282, 1);
             this.tb_Name.CustomButton.Name = "";
             this.tb_Name.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Name.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -91,7 +92,7 @@
             this.tb_Name.CustomButton.UseSelectable = true;
             this.tb_Name.CustomButton.Visible = false;
             this.tb_Name.Lines = new string[0];
-            this.tb_Name.Location = new System.Drawing.Point(56, 70);
+            this.tb_Name.Location = new System.Drawing.Point(63, 70);
             this.tb_Name.MaxLength = 32767;
             this.tb_Name.Name = "tb_Name";
             this.tb_Name.PasswordChar = '\0';
@@ -100,7 +101,7 @@
             this.tb_Name.SelectionLength = 0;
             this.tb_Name.SelectionStart = 0;
             this.tb_Name.ShortcutsEnabled = true;
-            this.tb_Name.Size = new System.Drawing.Size(311, 23);
+            this.tb_Name.Size = new System.Drawing.Size(304, 23);
             this.tb_Name.TabIndex = 8;
             this.tb_Name.UseSelectable = true;
             this.tb_Name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -112,7 +113,7 @@
             // 
             // 
             this.tb_Password.CustomButton.Image = null;
-            this.tb_Password.CustomButton.Location = new System.Drawing.Point(289, 1);
+            this.tb_Password.CustomButton.Location = new System.Drawing.Point(282, 1);
             this.tb_Password.CustomButton.Name = "";
             this.tb_Password.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Password.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -121,7 +122,7 @@
             this.tb_Password.CustomButton.UseSelectable = true;
             this.tb_Password.CustomButton.Visible = false;
             this.tb_Password.Lines = new string[0];
-            this.tb_Password.Location = new System.Drawing.Point(56, 44);
+            this.tb_Password.Location = new System.Drawing.Point(63, 44);
             this.tb_Password.MaxLength = 32767;
             this.tb_Password.Name = "tb_Password";
             this.tb_Password.PasswordChar = '\0';
@@ -130,7 +131,7 @@
             this.tb_Password.SelectionLength = 0;
             this.tb_Password.SelectionStart = 0;
             this.tb_Password.ShortcutsEnabled = true;
-            this.tb_Password.Size = new System.Drawing.Size(311, 23);
+            this.tb_Password.Size = new System.Drawing.Size(304, 23);
             this.tb_Password.TabIndex = 7;
             this.tb_Password.UseSelectable = true;
             this.tb_Password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -142,7 +143,7 @@
             // 
             // 
             this.tb_Account.CustomButton.Image = null;
-            this.tb_Account.CustomButton.Location = new System.Drawing.Point(289, 1);
+            this.tb_Account.CustomButton.Location = new System.Drawing.Point(282, 1);
             this.tb_Account.CustomButton.Name = "";
             this.tb_Account.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Account.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -151,7 +152,7 @@
             this.tb_Account.CustomButton.UseSelectable = true;
             this.tb_Account.CustomButton.Visible = false;
             this.tb_Account.Lines = new string[0];
-            this.tb_Account.Location = new System.Drawing.Point(56, 18);
+            this.tb_Account.Location = new System.Drawing.Point(63, 18);
             this.tb_Account.MaxLength = 32767;
             this.tb_Account.Name = "tb_Account";
             this.tb_Account.PasswordChar = '\0';
@@ -160,7 +161,7 @@
             this.tb_Account.SelectionLength = 0;
             this.tb_Account.SelectionStart = 0;
             this.tb_Account.ShortcutsEnabled = true;
-            this.tb_Account.Size = new System.Drawing.Size(311, 23);
+            this.tb_Account.Size = new System.Drawing.Size(304, 23);
             this.tb_Account.TabIndex = 6;
             this.tb_Account.UseSelectable = true;
             this.tb_Account.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -169,32 +170,36 @@
             // lb_Account
             // 
             this.lb_Account.AutoSize = true;
+            this.lb_Account.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lb_Account.Location = new System.Drawing.Point(7, 18);
             this.lb_Account.Name = "lb_Account";
-            this.lb_Account.Size = new System.Drawing.Size(37, 19);
+            this.lb_Account.Size = new System.Drawing.Size(50, 25);
             this.lb_Account.TabIndex = 5;
             this.lb_Account.Text = "帳號";
             // 
             // lb_Password
             // 
             this.lb_Password.AutoSize = true;
+            this.lb_Password.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lb_Password.Location = new System.Drawing.Point(7, 44);
             this.lb_Password.Name = "lb_Password";
-            this.lb_Password.Size = new System.Drawing.Size(37, 19);
+            this.lb_Password.Size = new System.Drawing.Size(50, 25);
             this.lb_Password.TabIndex = 4;
             this.lb_Password.Text = "密碼";
             // 
             // lb_Name
             // 
             this.lb_Name.AutoSize = true;
+            this.lb_Name.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lb_Name.Location = new System.Drawing.Point(7, 70);
             this.lb_Name.Name = "lb_Name";
-            this.lb_Name.Size = new System.Drawing.Size(37, 19);
+            this.lb_Name.Size = new System.Drawing.Size(50, 25);
             this.lb_Name.TabIndex = 3;
             this.lb_Name.Text = "姓名";
             // 
             // btn_Delete
             // 
+            this.btn_Delete.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Delete.Location = new System.Drawing.Point(192, 98);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(77, 74);
@@ -205,6 +210,7 @@
             // 
             // btn_Update
             // 
+            this.btn_Update.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Update.Location = new System.Drawing.Point(99, 98);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(78, 74);
@@ -215,6 +221,7 @@
             // 
             // btn_Insert
             // 
+            this.btn_Insert.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Insert.Location = new System.Drawing.Point(6, 98);
             this.btn_Insert.Name = "btn_Insert";
             this.btn_Insert.Size = new System.Drawing.Size(78, 74);

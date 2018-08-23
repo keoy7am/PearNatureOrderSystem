@@ -16,9 +16,22 @@ namespace PearNatureOrderSystem.Services
         public static event TableChangedEvent TableChanged;
         
         #region Misc
-        public static BindingSource GetTableSource()
+        /// <summary>
+        /// 取得全部桌號 (BindingSource)
+        /// </summary>
+        /// <param name="isGridView">是否為DataGridView</param>
+        /// <returns></returns>
+        public static BindingSource GetTableSource(bool isGridView=true)
         {
-            var bindingList = new BindingList<TableModel>(GetAllTables());
+            var tables = GetAllTables();
+            if (!isGridView)
+            {
+                foreach (var table in tables)
+                {
+                    table.Name = $"{table.Name} ({table.Desc})";
+                }
+            }
+            var bindingList = new BindingList<TableModel>(tables);
             var source = new BindingSource(bindingList, null);
             return source;
         }

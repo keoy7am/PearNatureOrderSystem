@@ -189,7 +189,7 @@ namespace PearNatureOrderSystem.Presentation
         {
             try
             {
-                cb_Table.DataSource = TableServices.GetTableSource();
+                cb_Table.DataSource = TableServices.GetTableSource(false);
                 cb_Table.DisplayMember = "Name";
                 cb_Table.ValueMember = "Name";
             }

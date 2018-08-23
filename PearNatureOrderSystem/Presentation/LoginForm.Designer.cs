@@ -37,6 +37,7 @@
             // 
             // btn_Login
             // 
+            this.btn_Login.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Login.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_Login.Location = new System.Drawing.Point(23, 121);
             this.btn_Login.Name = "btn_Login";
@@ -117,6 +118,7 @@
             // 
             // btn_Reset
             // 
+            this.btn_Reset.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Reset.Location = new System.Drawing.Point(171, 122);
             this.btn_Reset.Name = "btn_Reset";
             this.btn_Reset.Size = new System.Drawing.Size(140, 59);
@@ -136,7 +138,7 @@
             this.Controls.Add(this.tb_Password);
             this.Controls.Add(this.tb_Account);
             this.Controls.Add(this.btn_Login);
-            this.Font = new System.Drawing.Font("微軟正黑體", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Font = new System.Drawing.Font("微軟正黑體", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";

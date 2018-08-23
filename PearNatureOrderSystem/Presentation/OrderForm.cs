@@ -73,7 +73,7 @@ namespace PearNatureOrderSystem.Presentation
             }
             orderDetail.TotalPrice = price * orderDetail.Count;
             /* UI */
-            tb_Count.Value = orderDetail.Count;
+            tb_Count.Text = orderDetail.Count.ToString();
             tb_Name.Text = orderDetail.Name;
             tb_Price.Text = isDifference ? $"{price.ToString()} (差價)":price.ToString();
             tb_TotalPrice.Text = isMeal ? $"{orderDetail.TotalPrice}" : $"{orderDetail.TotalPrice}";
@@ -83,12 +83,6 @@ namespace PearNatureOrderSystem.Presentation
         {
             isMeal = cb_IsMealPrice.Checked;
             cb_IsMealMaster.Enabled = isMeal;
-            RefreshDetail();
-        }
-
-        private void tb_Count_ValueChanged(object sender, EventArgs e)
-        {
-            orderDetail.Count = Convert.ToInt32(tb_Count.Value);
             RefreshDetail();
         }
 
@@ -114,6 +108,40 @@ namespace PearNatureOrderSystem.Presentation
         private void btn_Cancle_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_NumUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var count = Convert.ToInt32(tb_Count.Text);
+                count++;
+                tb_Count.Text = count.ToString();
+
+                orderDetail.Count = Convert.ToInt32(tb_Count.Text);
+                RefreshDetail();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void btn_NumDown_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var count = Convert.ToInt32(tb_Count.Text);
+                count--;
+                tb_Count.Text = count.ToString();
+
+                orderDetail.Count = Convert.ToInt32(tb_Count.Text);
+                RefreshDetail();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
