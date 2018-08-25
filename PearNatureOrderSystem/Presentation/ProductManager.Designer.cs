@@ -409,7 +409,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grid_Category.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grid_Category.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.grid_Category.RowTemplate.Height = 24;
+            this.grid_Category.RowTemplate.Height = 40;
             this.grid_Category.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid_Category.Size = new System.Drawing.Size(345, 316);
             this.grid_Category.TabIndex = 23;
@@ -458,7 +458,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.grid_Product.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grid_Product.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.grid_Product.RowTemplate.Height = 24;
+            this.grid_Product.RowTemplate.Height = 40;
             this.grid_Product.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid_Product.Size = new System.Drawing.Size(345, 316);
             this.grid_Product.TabIndex = 22;

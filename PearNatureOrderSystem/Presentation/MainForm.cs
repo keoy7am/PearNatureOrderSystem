@@ -61,8 +61,8 @@ namespace PearNatureOrderSystem.Presentation
             }
         }
         #endregion
-        #region grid_prod 雙擊商品時開啟商品加入表單
-        private void grid_prod_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        #region grid_prod 單擊商品時開啟商品加入表單
+        private void grid_prod_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
                 return;

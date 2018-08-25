@@ -166,7 +166,7 @@
             // 
             // 
             this.tb_Count.CustomButton.Image = null;
-            this.tb_Count.CustomButton.Location = new System.Drawing.Point(234, 1);
+            this.tb_Count.CustomButton.Location = new System.Drawing.Point(243, 1);
             this.tb_Count.CustomButton.Name = "";
             this.tb_Count.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_Count.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -178,7 +178,7 @@
             this.tb_Count.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.tb_Count.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.tb_Count.Lines = new string[] {
-        "0"};
+        "1"};
             this.tb_Count.Location = new System.Drawing.Point(144, 126);
             this.tb_Count.MaxLength = 100;
             this.tb_Count.Name = "tb_Count";
@@ -190,7 +190,7 @@
             this.tb_Count.ShortcutsEnabled = true;
             this.tb_Count.Size = new System.Drawing.Size(265, 23);
             this.tb_Count.TabIndex = 13;
-            this.tb_Count.Text = "0";
+            this.tb_Count.Text = "1";
             this.tb_Count.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_Count.UseSelectable = true;
             this.tb_Count.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));

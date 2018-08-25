@@ -360,7 +360,7 @@
             this.grid_OrderCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grid_OrderCart.RowHeadersVisible = false;
             this.grid_OrderCart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.grid_OrderCart.RowTemplate.Height = 24;
+            this.grid_OrderCart.RowTemplate.Height = 60;
             this.grid_OrderCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid_OrderCart.Size = new System.Drawing.Size(391, 552);
             this.grid_OrderCart.TabIndex = 6;
@@ -423,11 +423,11 @@
             this.grid_prod.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grid_prod.RowHeadersVisible = false;
             this.grid_prod.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.grid_prod.RowTemplate.Height = 24;
+            this.grid_prod.RowTemplate.Height = 60;
             this.grid_prod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid_prod.Size = new System.Drawing.Size(386, 552);
             this.grid_prod.TabIndex = 4;
-            this.grid_prod.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_prod_CellMouseDoubleClick);
+            this.grid_prod.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_prod_CellMouseClick);
             // 
             // lb_cate
             // 
@@ -487,7 +487,7 @@
             this.grid_cate.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grid_cate.RowHeadersVisible = false;
             this.grid_cate.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.grid_cate.RowTemplate.Height = 24;
+            this.grid_cate.RowTemplate.Height = 60;
             this.grid_cate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid_cate.Size = new System.Drawing.Size(210, 552);
             this.grid_cate.TabIndex = 2;

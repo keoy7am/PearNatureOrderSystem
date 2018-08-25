@@ -132,7 +132,11 @@ namespace PearNatureOrderSystem.Presentation
             try
             {
                 var count = Convert.ToInt32(tb_Count.Text);
-                count--;
+                // 數量不得小於0
+                if (count > 0)
+                {
+                    count--;
+                }
                 tb_Count.Text = count.ToString();
 
                 orderDetail.Count = Convert.ToInt32(tb_Count.Text);

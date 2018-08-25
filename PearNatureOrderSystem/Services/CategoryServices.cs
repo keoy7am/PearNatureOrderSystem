@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PearNatureOrderSystem.Services
@@ -16,7 +14,9 @@ namespace PearNatureOrderSystem.Services
         public static event CategoryChangedEvent CategoryChanged;
         public delegate void ProductChangedEvent();
         public static event ProductChangedEvent ProductChanged;
-
+        public delegate void ProductRemarkChangedEvent();
+        public static event ProductRemarkChangedEvent ProductRemarkChanged;
+        
         #region Misc
         public static BindingSource GetCateSource()
         {
