@@ -75,6 +75,7 @@
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ProductRemark.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Presentation\AccountManager.cs">

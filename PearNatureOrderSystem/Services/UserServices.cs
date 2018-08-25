@@ -38,7 +38,7 @@ namespace PearNatureOrderSystem.Services
             defaultUser.isAdmin = true;
             defaultUser.SaltKey = MD5.GenerateKey();
 
-            using (var db = new LiteDatabase(@"Local.db"))
+            using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
             {
                 // Get customer collection
                 var users = db.GetCollection<UserSaveModel>("users");
@@ -148,7 +148,7 @@ namespace PearNatureOrderSystem.Services
         public static List<UserModel> GetAllUsers()
         {
             List<UserSaveModel> userSaveModels = new List<UserSaveModel>();
-            using (var db = new LiteDatabase(@"Local.db"))
+            using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
             {
                 // Get customer collection
                 var users = db.GetCollection<UserSaveModel>("users");
@@ -162,7 +162,7 @@ namespace PearNatureOrderSystem.Services
         /// <returns></returns>
         public bool Login(string account, string password)
         {
-            using (var db = new LiteDatabase(@"Local.db"))
+            using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
             {
                 // Get customer collection
                 var users = db.GetCollection<UserSaveModel>("users");
@@ -219,7 +219,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     // Get customer collection
                     var users = db.GetCollection<UserSaveModel>("users");
@@ -259,7 +259,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var users = db.GetCollection<UserSaveModel>("users");
 
@@ -295,7 +295,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var users = db.GetCollection<UserSaveModel>("users");
 
@@ -336,7 +336,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var users = db.GetCollection<UserSaveModel>("users");
 

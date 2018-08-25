@@ -3,6 +3,7 @@ using PearNatureOrderSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ namespace PearNatureOrderSystem.Services
         public static List<TableModel> GetAllTables()
         {
             List<TableModel> tables = new List<TableModel>();
-            using (var db = new LiteDatabase(@"Local.db"))
+            using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
             {
                 // Get customer collection
                 var users = db.GetCollection<TableModel>("tables");
@@ -52,7 +53,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var tables = db.GetCollection<TableModel>("tables");
 
@@ -88,7 +89,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var tables = db.GetCollection<TableModel>("tables");
 
@@ -118,7 +119,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var tables = db.GetCollection<TableModel>("tables");
 
@@ -145,7 +146,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var tables = db.GetCollection<TableModel>("tables");
 

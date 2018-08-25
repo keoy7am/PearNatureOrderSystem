@@ -3,6 +3,7 @@ using PearNatureOrderSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace PearNatureOrderSystem.Services
         public static List<CategoryModel> GetAllCates()
         {
             List<CategoryModel> cate = new List<CategoryModel>();
-            using (var db = new LiteDatabase(@"Local.db"))
+            using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
             {
                 // Get customer collection
                 var cates = db.GetCollection<CategoryModel>("categories");
@@ -47,7 +48,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var cates = db.GetCollection<CategoryModel>("categories");
                     var cate = cates.Find(x => x.Id == categoryModel.Id).FirstOrDefault();
@@ -75,7 +76,7 @@ namespace PearNatureOrderSystem.Services
         public static List<ProductModel> QueryProductsByCateId(long id)
         {
             List<ProductModel> products;
-            using (var db = new LiteDatabase(@"Local.db"))
+            using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
             {
                 // Get customer collection
                 var cates = db.GetCollection<CategoryModel>("categories");
@@ -87,7 +88,7 @@ namespace PearNatureOrderSystem.Services
         public CategoryModel QueryCategoryById(long id)
         {
             CategoryModel categoryModel;
-            using (var db = new LiteDatabase(@"Local.db"))
+            using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
             {
                 // Get customer collection
                 var cates = db.GetCollection<CategoryModel>("categories");
@@ -108,7 +109,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var cates = db.GetCollection<CategoryModel>("categories");
 
@@ -145,7 +146,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var cates = db.GetCollection<CategoryModel>("categories");
 
@@ -172,7 +173,7 @@ namespace PearNatureOrderSystem.Services
         {
             try
             {
-                using (var db = new LiteDatabase(@"Local.db"))
+                using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var cates = db.GetCollection<CategoryModel>("categories");
 
