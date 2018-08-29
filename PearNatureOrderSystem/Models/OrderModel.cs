@@ -46,6 +46,10 @@ namespace PearNatureOrderSystem.Models
         /// 是否套餐主食
         /// </summary>
         public bool isMealMaster { get; set; }
+        /// <summary>
+        /// 餐點備註
+        /// </summary>
+        public List<ProductRemark> ProductRemarks { get; set; }
 
     }
 }

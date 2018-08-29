@@ -12,10 +12,6 @@ namespace PearNatureOrderSystem.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public int MealPrice { get; set; }
-        /// <summary>
-        /// 餐點備註
-        /// </summary>
-        public List<ProductRemark> ProductRemarks { get; set; }
         //public long CreatedDateTime { get; set; }
         //public long ModifiedDateTime { get; set; }
     }

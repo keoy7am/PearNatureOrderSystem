@@ -135,7 +135,7 @@ namespace PearNatureOrderSystem.Presentation
                 category.Name = tb_CategoryName.Text.Trim();
                 category.Products = new List<ProductModel>();
 
-                if (!_categoryServices.InsertTable(category))
+                if (!_categoryServices.InsertCategory(category))
                 {
                     MetroMessageBox.Show(this, "新增分類失敗！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -155,7 +155,7 @@ namespace PearNatureOrderSystem.Presentation
                 CategoryModel category = _categoryServices.QueryCategoryById(cateId);
                 category.Name = tb_CategoryName.Text.Trim();
 
-                if (!_categoryServices.UpdateTable(category))
+                if (!_categoryServices.UpdateCategory(category))
                 {
                     MetroMessageBox.Show(this, "更新分類失敗！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -174,7 +174,7 @@ namespace PearNatureOrderSystem.Presentation
                 if (DialogResult.No == dr) { return; }
                 long cateId = Convert.ToInt64(grid_Category.SelectedRows[0].Cells["Id"].Value);
 
-                if (!_categoryServices.DeleteTable(cateId))
+                if (!_categoryServices.DeleteCategory(cateId))
                 {
                     MetroMessageBox.Show(this, "刪除分類失敗！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -207,7 +207,7 @@ namespace PearNatureOrderSystem.Presentation
 
                 category.Products.Add(product);
 
-                if (!_categoryServices.UpdateTable(category,true))
+                if (!_categoryServices.UpdateCategory(category,true))
                 {
                     MetroMessageBox.Show(this, "新增商品失敗！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -240,7 +240,7 @@ namespace PearNatureOrderSystem.Presentation
                     MetroMessageBox.Show(this, "更新商品失敗，商品並不存在！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 
-                if (!_categoryServices.UpdateTable(category,true))
+                if (!_categoryServices.UpdateCategory(category,true))
                 {
                     MetroMessageBox.Show(this, "更新商品失敗！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -264,7 +264,7 @@ namespace PearNatureOrderSystem.Presentation
                 
                 category.Products.Remove(product);
 
-                if (!_categoryServices.UpdateTable(category,true))
+                if (!_categoryServices.UpdateCategory(category,true))
                 {
                     MetroMessageBox.Show(this, "刪除商品失敗！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

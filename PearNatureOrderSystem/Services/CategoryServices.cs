@@ -15,9 +15,7 @@ namespace PearNatureOrderSystem.Services
         public static event CategoryChangedEvent CategoryChanged;
         public delegate void ProductChangedEvent();
         public static event ProductChangedEvent ProductChanged;
-        public delegate void ProductRemarkChangedEvent();
-        public static event ProductRemarkChangedEvent ProductRemarkChanged;
-        
+
         #region Misc
         public static BindingSource GetCateSource()
         {
@@ -44,7 +42,7 @@ namespace PearNatureOrderSystem.Services
         }
         #endregion
         #region Create
-        public bool InsertTable(CategoryModel categoryModel)
+        public bool InsertCategory(CategoryModel categoryModel)
         {
             try
             {
@@ -105,7 +103,7 @@ namespace PearNatureOrderSystem.Services
         /// <param name="categoryModel"></param>
         /// <param name="productChanged">判別是否為更新產品 true:更新產品即刷新產品清單 false:更新分類即更新分類清單</param>
         /// <returns></returns>
-        public bool UpdateTable(CategoryModel categoryModel,bool productChanged=false)
+        public bool UpdateCategory(CategoryModel categoryModel, bool productChanged = false)
         {
             try
             {
@@ -142,7 +140,7 @@ namespace PearNatureOrderSystem.Services
         }
         #endregion
         #region Delete
-        public bool DeleteTable(CategoryModel categoryModel)
+        public bool DeleteCategory(CategoryModel categoryModel)
         {
             try
             {
@@ -169,19 +167,20 @@ namespace PearNatureOrderSystem.Services
             }
             return true;
         }
-        public bool DeleteTable(long id)
+        public bool DeleteCategory(long id)
         {
             try
             {
                 using (var db = new LiteDatabase(ConfigurationManager.AppSettings["DBName"].ToString().Trim()))
                 {
                     var cates = db.GetCollection<CategoryModel>("categories");
-
                     var cate = cates.Find(x => x.Id == id).FirstOrDefault();
+
                     if (cate != null)
                     {
                         cates.Delete(x => x.Id == id);
                         CategoryChanged();
+                        return true;
                     }
                     else
                     {

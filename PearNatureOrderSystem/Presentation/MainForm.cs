@@ -80,6 +80,28 @@ namespace PearNatureOrderSystem.Presentation
             OrderServices.ResetOrderCart();
         }
         #endregion
+        #region btn_ClearOrderSelected 移除指定品項
+        private void btn_ClearOrderSelected_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int orderId = Convert.ToInt32(grid_OrderCart.SelectedRows[0].Cells["Id"].Value);
+                OrderServices.RemoveFromCart(orderId);
+                foreach (DataGridViewRow dgvr in grid_OrderCart.Rows)
+                {
+                    if (dgvr.Selected == true)
+                    {
+                        grid_OrderCart.Rows.Remove(dgvr);
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+                // log here
+            }
+        }
+        #endregion
         #endregion
 
         #region Manager
@@ -106,6 +128,10 @@ namespace PearNatureOrderSystem.Presentation
         {
             new OrderManager().ShowDialog();
         }
+        private void btn_RemarkManager_Click(object sender, EventArgs e)
+        {
+            new RemarkManager().ShowDialog();
+        }
         #endregion
 
         #region UI
@@ -121,6 +147,7 @@ namespace PearNatureOrderSystem.Presentation
                 btn_ProductManager.Visible = true;
                 btn_OrderManager.Visible = true;
                 btn_TableManager.Visible = true;
+                btn_RemarkManager.Visible = true;
             }
             else
             {
@@ -128,6 +155,7 @@ namespace PearNatureOrderSystem.Presentation
                 btn_ProductManager.Visible = false;
                 btn_OrderManager.Visible = false;
                 btn_TableManager.Visible = false;
+                btn_RemarkManager.Visible = false;
             }
 
             lb_LoginUser.Text = $"使用者：{Appdata.loginUser.Name}";
@@ -223,11 +251,13 @@ namespace PearNatureOrderSystem.Presentation
             try
             {
                 grid_prod.Columns["Id"].Visible = false;
+                grid_prod.Columns["Price"].Visible = false;
+                grid_prod.Columns["MealPrice"].Visible = false;
 
                 //grid_prod.Columns["Id"].HeaderText = "編號";
                 grid_prod.Columns["Name"].HeaderText = "商品名稱";
-                grid_prod.Columns["Price"].HeaderText = "商品定價";
-                grid_prod.Columns["MealPrice"].HeaderText = "套餐價格";
+                //grid_prod.Columns["Price"].HeaderText = "商品定價";
+                //grid_prod.Columns["MealPrice"].HeaderText = "套餐價格";
             }
             catch (Exception ex)
             {
@@ -250,6 +280,11 @@ namespace PearNatureOrderSystem.Presentation
                 grid_OrderCart.Columns["Name"].HeaderText = "商品名稱";
                 grid_OrderCart.Columns["Count"].HeaderText = "數量";
                 grid_OrderCart.Columns["TotalPrice"].HeaderText = "總金額";
+
+
+                //grid_OrderCart.Columns["Name"].Width = 220;
+                grid_OrderCart.Columns["Count"].Width = 60;
+                grid_OrderCart.Columns["TotalPrice"].Width = 80;
             }
             catch (Exception ex)
             {
@@ -316,5 +351,6 @@ namespace PearNatureOrderSystem.Presentation
                 MetroMessageBox.Show(this, $"列印失敗。 錯誤訊息：{ex.Message}", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
     }
 }

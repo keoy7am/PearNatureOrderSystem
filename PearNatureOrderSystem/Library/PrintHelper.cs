@@ -112,6 +112,47 @@ namespace PearNatureOrderSystem.Library
                 e.Graphics.DrawString(item.Count.ToString(), new Font("微軟正黑體", 9), new SolidBrush(Color.Black), new PointF(100, CalcMarginY(startIndex)));
                 e.Graphics.DrawString(item.TotalPrice.ToString(), new Font("微軟正黑體", 9), new SolidBrush(Color.Black), new PointF(150, CalcMarginY(startIndex)));
                 startIndex++;
+                if (item.ProductRemarks.Count > 0)
+                {
+                    int rowIndex = 1;
+                    string row = "備註：";
+                    string tempRow = row;
+                    Dictionary<int, string> re = new Dictionary<int, string>();
+                    //e.Graphics.DrawString("備註：", new Font("微軟正黑體", 9), new SolidBrush(Color.Black), new PointF(20, CalcMarginY(startIndex)));
+                    //startIndex++;
+                    int counter = 1;
+                    foreach (var remark in item.ProductRemarks)
+                    {
+                        // 第一個備註時呈現為 備註：少糖 後續為 備註：少糖,少冰,....
+                        if (counter == 1)
+                        {
+                            tempRow = tempRow + remark.Remark;
+                        }
+                        else
+                        {
+                            tempRow = tempRow + "," + remark.Remark;
+                        }
+                        if(Encoding.Default.GetBytes(tempRow).Length > 24)
+                        {
+                            re.Add(rowIndex, row);
+                            row = "";
+                            tempRow = row + "," + remark.Remark;
+                            rowIndex++;
+                        }
+                        // 最後一行
+                        if(counter == item.ProductRemarks.Count)
+                        {
+                            re.Add(rowIndex, tempRow);
+                            break;
+                        }
+                        counter++;
+                    }
+                    for(int i = 1; i <= re.Count; i++)
+                    {
+                        e.Graphics.DrawString(re.FirstOrDefault(x=>x.Key==i).Value, new Font("微軟正黑體", 9, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(40, CalcMarginY(startIndex)));
+                        startIndex++;
+                    }
+                }
             }
             // 單尾
             e.Graphics.DrawString("-----------------------------------", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+1)));

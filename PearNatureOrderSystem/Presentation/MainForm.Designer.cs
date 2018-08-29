@@ -47,6 +47,7 @@
             this.btn_ClearOrderList = new MetroFramework.Controls.MetroButton();
             this.lb_time = new MetroFramework.Controls.MetroLabel();
             this.panel_LeftSide = new MetroFramework.Controls.MetroPanel();
+            this.btn_ClearOrderSelected = new MetroFramework.Controls.MetroButton();
             this.panel_SaleInfo = new MetroFramework.Controls.MetroPanel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -63,6 +64,7 @@
             this.btn_TableManager = new MetroFramework.Controls.MetroButton();
             this.btn_OrderManager = new MetroFramework.Controls.MetroButton();
             this.panel_ControlPanel_Top = new MetroFramework.Controls.MetroPanel();
+            this.btn_RemarkManager = new MetroFramework.Controls.MetroButton();
             this.panel_LeftSide.SuspendLayout();
             this.panel_SaleInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_OrderCart)).BeginInit();
@@ -113,9 +115,9 @@
             this.btn_AccountManager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AccountManager.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btn_AccountManager.Location = new System.Drawing.Point(3, 377);
+            this.btn_AccountManager.Location = new System.Drawing.Point(3, 293);
             this.btn_AccountManager.Name = "btn_AccountManager";
-            this.btn_AccountManager.Size = new System.Drawing.Size(234, 100);
+            this.btn_AccountManager.Size = new System.Drawing.Size(234, 72);
             this.btn_AccountManager.TabIndex = 7;
             this.btn_AccountManager.Text = "帳號管理";
             this.btn_AccountManager.UseSelectable = true;
@@ -129,7 +131,7 @@
             this.btn_ProductManager.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_ProductManager.Location = new System.Drawing.Point(3, 59);
             this.btn_ProductManager.Name = "btn_ProductManager";
-            this.btn_ProductManager.Size = new System.Drawing.Size(234, 100);
+            this.btn_ProductManager.Size = new System.Drawing.Size(234, 72);
             this.btn_ProductManager.TabIndex = 6;
             this.btn_ProductManager.Text = "產品管理";
             this.btn_ProductManager.UseSelectable = true;
@@ -153,7 +155,7 @@
             this.btn_Print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Print.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btn_Print.Highlight = true;
-            this.btn_Print.Location = new System.Drawing.Point(611, 617);
+            this.btn_Print.Location = new System.Drawing.Point(620, 617);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(114, 100);
             this.btn_Print.TabIndex = 3;
@@ -165,7 +167,7 @@
             // 
             this.btn_ClearOrderList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ClearOrderList.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btn_ClearOrderList.Location = new System.Drawing.Point(491, 617);
+            this.btn_ClearOrderList.Location = new System.Drawing.Point(258, 617);
             this.btn_ClearOrderList.Name = "btn_ClearOrderList";
             this.btn_ClearOrderList.Size = new System.Drawing.Size(114, 100);
             this.btn_ClearOrderList.TabIndex = 2;
@@ -189,6 +191,7 @@
             this.panel_LeftSide.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_LeftSide.Controls.Add(this.btn_ClearOrderSelected);
             this.panel_LeftSide.Controls.Add(this.panel_SaleInfo);
             this.panel_LeftSide.Controls.Add(this.lb_TableNum);
             this.panel_LeftSide.Controls.Add(this.cb_Table);
@@ -212,6 +215,18 @@
             this.panel_LeftSide.VerticalScrollbarHighlightOnWheel = false;
             this.panel_LeftSide.VerticalScrollbarSize = 10;
             // 
+            // btn_ClearOrderSelected
+            // 
+            this.btn_ClearOrderSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ClearOrderSelected.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btn_ClearOrderSelected.Location = new System.Drawing.Point(491, 617);
+            this.btn_ClearOrderSelected.Name = "btn_ClearOrderSelected";
+            this.btn_ClearOrderSelected.Size = new System.Drawing.Size(114, 100);
+            this.btn_ClearOrderSelected.TabIndex = 11;
+            this.btn_ClearOrderSelected.Text = "移除品項";
+            this.btn_ClearOrderSelected.UseSelectable = true;
+            this.btn_ClearOrderSelected.Click += new System.EventHandler(this.btn_ClearOrderSelected_Click);
+            // 
             // panel_SaleInfo
             // 
             this.panel_SaleInfo.Controls.Add(this.metroLabel4);
@@ -223,7 +238,7 @@
             this.panel_SaleInfo.HorizontalScrollbarSize = 10;
             this.panel_SaleInfo.Location = new System.Drawing.Point(4, 617);
             this.panel_SaleInfo.Name = "panel_SaleInfo";
-            this.panel_SaleInfo.Size = new System.Drawing.Size(401, 100);
+            this.panel_SaleInfo.Size = new System.Drawing.Size(102, 100);
             this.panel_SaleInfo.TabIndex = 10;
             this.panel_SaleInfo.VerticalScrollbarBarColor = true;
             this.panel_SaleInfo.VerticalScrollbarHighlightOnWheel = false;
@@ -231,10 +246,11 @@
             // 
             // metroLabel4
             // 
-            this.metroLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(215, 35);
+            this.metroLabel4.Location = new System.Drawing.Point(3, 69);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(79, 19);
             this.metroLabel4.TabIndex = 13;
@@ -243,10 +259,11 @@
             // 
             // metroLabel3
             // 
-            this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(215, 16);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 50);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(79, 19);
             this.metroLabel3.TabIndex = 12;
@@ -255,7 +272,8 @@
             // 
             // metroLabel2
             // 
-            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.Location = new System.Drawing.Point(3, 31);
@@ -267,7 +285,8 @@
             // 
             // metroLabel1
             // 
-            this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel1.Location = new System.Drawing.Point(3, 12);
@@ -345,7 +364,7 @@
             this.grid_OrderCart.EnableHeadersVisualStyles = false;
             this.grid_OrderCart.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grid_OrderCart.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.grid_OrderCart.Location = new System.Drawing.Point(611, 59);
+            this.grid_OrderCart.Location = new System.Drawing.Point(620, 59);
             this.grid_OrderCart.MultiSelect = false;
             this.grid_OrderCart.Name = "grid_OrderCart";
             this.grid_OrderCart.ReadOnly = true;
@@ -362,7 +381,7 @@
             this.grid_OrderCart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_OrderCart.RowTemplate.Height = 60;
             this.grid_OrderCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_OrderCart.Size = new System.Drawing.Size(391, 552);
+            this.grid_OrderCart.Size = new System.Drawing.Size(385, 552);
             this.grid_OrderCart.TabIndex = 6;
             // 
             // lb_prod
@@ -498,9 +517,9 @@
             this.btn_TableManager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_TableManager.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btn_TableManager.Location = new System.Drawing.Point(3, 271);
+            this.btn_TableManager.Location = new System.Drawing.Point(3, 215);
             this.btn_TableManager.Name = "btn_TableManager";
-            this.btn_TableManager.Size = new System.Drawing.Size(234, 100);
+            this.btn_TableManager.Size = new System.Drawing.Size(234, 72);
             this.btn_TableManager.TabIndex = 11;
             this.btn_TableManager.Text = "桌號管理";
             this.btn_TableManager.UseSelectable = true;
@@ -513,9 +532,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_OrderManager.Enabled = false;
             this.btn_OrderManager.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btn_OrderManager.Location = new System.Drawing.Point(3, 165);
+            this.btn_OrderManager.Location = new System.Drawing.Point(3, 137);
             this.btn_OrderManager.Name = "btn_OrderManager";
-            this.btn_OrderManager.Size = new System.Drawing.Size(234, 100);
+            this.btn_OrderManager.Size = new System.Drawing.Size(234, 72);
             this.btn_OrderManager.TabIndex = 12;
             this.btn_OrderManager.Text = "銷售管理";
             this.btn_OrderManager.UseSelectable = true;
@@ -526,6 +545,7 @@
             // 
             this.panel_ControlPanel_Top.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_ControlPanel_Top.Controls.Add(this.btn_RemarkManager);
             this.panel_ControlPanel_Top.Controls.Add(this.btn_OrderManager);
             this.panel_ControlPanel_Top.Controls.Add(this.btn_Logout);
             this.panel_ControlPanel_Top.Controls.Add(this.btn_AccountManager);
@@ -543,6 +563,20 @@
             this.panel_ControlPanel_Top.VerticalScrollbarBarColor = true;
             this.panel_ControlPanel_Top.VerticalScrollbarHighlightOnWheel = false;
             this.panel_ControlPanel_Top.VerticalScrollbarSize = 10;
+            // 
+            // btn_RemarkManager
+            // 
+            this.btn_RemarkManager.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_RemarkManager.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btn_RemarkManager.Location = new System.Drawing.Point(3, 371);
+            this.btn_RemarkManager.Name = "btn_RemarkManager";
+            this.btn_RemarkManager.Size = new System.Drawing.Size(234, 72);
+            this.btn_RemarkManager.TabIndex = 13;
+            this.btn_RemarkManager.Text = "備註管理";
+            this.btn_RemarkManager.UseSelectable = true;
+            this.btn_RemarkManager.Visible = false;
+            this.btn_RemarkManager.Click += new System.EventHandler(this.btn_RemarkManager_Click);
             // 
             // MainForm
             // 
@@ -598,5 +632,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton btn_RemarkManager;
+        private MetroFramework.Controls.MetroButton btn_ClearOrderSelected;
     }
 }

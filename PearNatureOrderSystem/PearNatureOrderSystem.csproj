@@ -133,6 +133,12 @@
     <Compile Include="Presentation\ProductManager.Designer.cs">
       <DependentUpon>ProductManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\RemarkManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\RemarkManager.Designer.cs">
+      <DependentUpon>RemarkManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\TableManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\ProductManager.resx">
       <DependentUpon>ProductManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\RemarkManager.resx">
+      <DependentUpon>RemarkManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\TableManager.resx">
       <DependentUpon>TableManager.cs</DependentUpon>
