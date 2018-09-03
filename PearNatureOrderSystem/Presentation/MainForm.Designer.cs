@@ -586,10 +586,13 @@
             this.Controls.Add(this.panel_ControlPanel_Top);
             this.Controls.Add(this.lb_LoginUser);
             this.Controls.Add(this.panel_LeftSide);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
             this.Text = "PearNature Order System";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Move += new System.EventHandler(this.MainForm_Move);
             this.panel_LeftSide.ResumeLayout(false);
             this.panel_LeftSide.PerformLayout();
             this.panel_SaleInfo.ResumeLayout(false);

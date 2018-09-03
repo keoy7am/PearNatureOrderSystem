@@ -27,6 +27,11 @@ namespace PearNatureOrderSystem.Presentation
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            /* 預設程式為最頂層顯示及最大化 */
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
             CategoryServices.CategoryChanged += (ReloadCategory);
             CategoryServices.ProductChanged += (ReloadProduct);
             OrderServices.OrderCartChanged += (ReloadOrderCart);
@@ -351,6 +356,15 @@ namespace PearNatureOrderSystem.Presentation
                 MetroMessageBox.Show(this, $"列印失敗。 錯誤訊息：{ex.Message}", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        /// <summary>
+        /// 使程式無法移動
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainForm_Move(object sender, EventArgs e)
+        {
+            this.Top = 0;
+            this.Left = 0;
+        }
     }
 }

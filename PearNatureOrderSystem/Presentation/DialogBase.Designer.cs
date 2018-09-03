@@ -40,6 +40,7 @@
             this.Name = "DialogBase";
             this.Resizable = false;
             this.Text = "DialogBase";
+            this.Load += new System.EventHandler(this.DialogBase_Load);
             this.ResumeLayout(false);
 
         }

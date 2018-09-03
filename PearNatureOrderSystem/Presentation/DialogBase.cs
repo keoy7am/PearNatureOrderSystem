@@ -16,5 +16,10 @@ namespace PearNatureOrderSystem.Presentation
         {
             InitializeComponent();
         }
+
+        private void DialogBase_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
     }
 }
