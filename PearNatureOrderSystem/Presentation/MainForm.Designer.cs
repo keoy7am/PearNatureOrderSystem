@@ -588,6 +588,7 @@
             this.Controls.Add(this.panel_LeftSide);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "MainForm";
             this.Resizable = false;
             this.Text = "PearNature Order System";
