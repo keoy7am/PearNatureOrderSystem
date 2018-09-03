@@ -118,12 +118,12 @@ namespace PearNatureOrderSystem.Presentation
                 tb_TableName.Focus();
                 return false;
             }
-            if (tb_TableDesc.Text.Trim() == String.Empty)
-            {
-                MetroMessageBox.Show(this, "請輸入桌號敘述！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tb_TableDesc.Focus();
-                return false;
-            }
+            //if (tb_TableDesc.Text.Trim() == String.Empty)
+            //{
+            //    MetroMessageBox.Show(this, "請輸入桌號敘述！！", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    tb_TableDesc.Focus();
+            //    return false;
+            //}
             return true;
         }
 
