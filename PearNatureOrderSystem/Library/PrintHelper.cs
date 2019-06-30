@@ -165,7 +165,7 @@ namespace PearNatureOrderSystem.Library
                 e.Graphics.DrawString($"總金額 {OrderServices.GetTotalPrice()} 元", new Font("微軟正黑體", 10, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(90, CalcMarginY(startIndex + 2)));
             }
             e.Graphics.DrawString($"印單人 {Appdata.loginUser.Name}", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+3)));
-            e.Graphics.DrawString($"印單時間 {DateTime.Now.ToString()}", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+4)));
+            e.Graphics.DrawString($"{DateTime.Now.ToString()}", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+4)));
             //e.Graphics.DrawString($"Printer: {GetDefaultPrinter()}", new Font("微軟正黑體", 8), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+4)));
         }
         /// <summary>
