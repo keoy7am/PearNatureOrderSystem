@@ -13,10 +13,19 @@ namespace PearNatureOrderSystem.Library
 {
     public static class PrintHelper
     {
-        static string table;
-        public static object[] Print(string Table)
+        static string _table;
+        static int _todayOfYear = DateTime.Now.DayOfYear;
+        static int _number = 1;
+        public static object[] Print(string table)
         {
-            table = Table;
+
+            _table = table.Split(new string[] { " "},StringSplitOptions.None)[0];
+            // 判斷是否同日
+            if (DateTime.Now.DayOfYear != _todayOfYear)
+            {
+                _todayOfYear = DateTime.Now.DayOfYear;
+                _number = 1;
+            }
             object[] returnObj = new object[2];
             returnObj[0] = false;
             returnObj[1] = "";
@@ -49,7 +58,7 @@ namespace PearNatureOrderSystem.Library
             }
             finally
             {
-                table = string.Empty;
+                _table = string.Empty;
             }
             return returnObj;
         } 
@@ -101,7 +110,7 @@ namespace PearNatureOrderSystem.Library
 
             // 標頭
             e.Graphics.DrawString("訂單明細", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(60, CalcMarginY(0)));
-            e.Graphics.DrawString($"桌號：{table}", new Font("微軟正黑體", 12,FontStyle.Bold), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(1)));
+            e.Graphics.DrawString($"桌號：{_table}", new Font("微軟正黑體", 12,FontStyle.Bold), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(1)));
             e.Graphics.DrawString("-----------------------------------", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(2)));
             e.Graphics.DrawString(StringHandle("品項", "數量", "金額"), new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(3)));
             int startIndex = 4; // 上列標頭行數
@@ -145,7 +154,6 @@ namespace PearNatureOrderSystem.Library
                             re.Add(rowIndex, tempRow);
                             break;
                         }
-                        counter++;
                     }
                     for(int i = 1; i <= re.Count; i++)
                     {
@@ -156,6 +164,7 @@ namespace PearNatureOrderSystem.Library
             }
             // 單尾
             e.Graphics.DrawString("-----------------------------------", new Font("微軟正黑體", 14), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+1)));
+            e.Graphics.DrawString($"{_number}", new Font("微軟正黑體", 10, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex + 2)));
             if (OrderServices.GetTotalPrice() < 1000)
             {
                 e.Graphics.DrawString($"總金額 {OrderServices.GetTotalPrice()} 元", new Font("微軟正黑體", 10, FontStyle.Bold), new SolidBrush(Color.Black), new PointF(100, CalcMarginY(startIndex + 2)));
@@ -167,6 +176,7 @@ namespace PearNatureOrderSystem.Library
             e.Graphics.DrawString($"印單人 {Appdata.loginUser.Name}", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+3)));
             e.Graphics.DrawString($"{DateTime.Now.ToString()}", new Font("微軟正黑體", 10), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+4)));
             //e.Graphics.DrawString($"Printer: {GetDefaultPrinter()}", new Font("微軟正黑體", 8), new SolidBrush(Color.Black), new PointF(0, CalcMarginY(startIndex+4)));
+            _number++;
         }
         /// <summary>
         /// 計算該行數 Y 座標
